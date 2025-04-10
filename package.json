@@ -1,0 +1,21 @@
+{
+  "name": "projeto-entra21",
+  "version": "1.0.0",
+  "description": "Este projeto foi desenvolvido como parte do programa Entra21. O objetivo é aprimorar nossos conhecimentos em desenvolvimento web, aplicando HTML, CSS e JavaScript para criar uma aplicação funcional e interativa.",
+  "homepage": "https://github.com/Nicolas121221/Projeto-Entra21#readme",
+  "bugs": {
+    "url": "https://github.com/Nicolas121221/Projeto-Entra21/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicolas121221/Projeto-Entra21.git"
+  },
+  "license": "ISC",
+  "author": "Nicolas Guedes",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {}
+}
