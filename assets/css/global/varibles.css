@@ -1,5 +1,6 @@
 :root{
     --primary-color: #1ED760;
-    --dark-color:#000;
-    --gap: 2rem
+    --dark-color:#0A0A0A;
+    --grey-color:#1e1e1e;
+    --gap: 1rem
 }

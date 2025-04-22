@@ -22,23 +22,16 @@ Este projeto foi desenvolvido como parte do programa Entra21. O objetivo é apri
 ```txt
 📦 projeto-entra21
  ┣ 📁 .vscode
- ┃ ┗ 📜 extensions.json       # Arquivos das extensões utilizadas
- ┃
  ┣ 📂 assets
- ┃ ┣ 📂 css                   # Arquivos de estilos
- ┃ ┣ 📂 img                   # Imagens do projeto
- ┃ ┣ 📂 js                    # Arquivos JavaScript
- ┃ ┗ 📂 pages                 # Páginas do projeto
- ┃
- ┣ 📂 node_modules            # Dependências do Node.js (ignorado pelo Git)
- ┃
- ┣ 📜 .env.example            # Exemplo de arquivo de .env
- ┣ 📜 .gitignore              # Arquivos a serem ignorados pelo Git
- ┣ 📜 .gitattributes          # Configurações específicas do Git
- ┣ 📜 LICENSE                 # Arquivo de licença do projeto
- ┣ 📜 package.json            # Arquivo de configuração do node
- ┣ 📜 project.dio             # Arquivo contendo o diagrama do projeto
- ┗ 📜 README.md               # Documentação principal do projeto
+ ┃ ┣ 📂 css                   
+ ┃ ┣ 📂 img                                       
+ ┃ ┗ 📂 js
+ ┣ 📂 node_modules            
+ ┣ 📂 pages            
+ ┣ 📜 .env.example                   
+ ┣ 📜 index.html              
+ ┣ 📜 LICENSE                                     
+ ┗ 📜 README.md               
 ```
 
 ## 📌 Como Executar o Projeto
@@ -46,7 +39,7 @@ Este projeto foi desenvolvido como parte do programa Entra21. O objetivo é apri
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/projeto-entra21.git
+   git clone https://github.com/Nicolas121221/Projeto-Entra21.git
    ```
 
 2. Acesse a pasta do projeto:
