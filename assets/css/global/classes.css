@@ -3,3 +3,11 @@ body{
     height: 100dvh;
 }
 
+
+.main{
+    display: flex;
+    flex-flow: row;
+    margin: 7rem 0 2rem 0;
+    height: 100%;
+    width: 100dvw;
+}
