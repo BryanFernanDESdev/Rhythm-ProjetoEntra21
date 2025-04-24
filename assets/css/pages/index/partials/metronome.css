@@ -1,8 +1,46 @@
-.metronome-container{
+.metronome-container {
     background: var(--dark-color);
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     box-shadow: 0 0 0.4rem var(--dark-color);
-    height: 99%;
-    flex: 33.3% 0 0;
-    margin-left: 1rem;
+    height: calc(100% - 3rem);
+    width: 64rem;
+}
+
+.counter h2 {
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.dots {
+    margin-top: 1rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dot {
+    height: 3rem;
+    width: 3rem;
+    background: #ffffff57;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+
+#tempo-dot {
+    background: var(--primary-color);
+    color: black;
 }
