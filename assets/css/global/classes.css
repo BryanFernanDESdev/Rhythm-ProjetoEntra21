@@ -1,13 +1,14 @@
 body{
     background: var(--grey-color);
-    height: 100dvh;
+    overflow-y: hidden;
 }
 
-
 .main{
+    position: absolute;
     display: flex;
     flex-flow: row;
-    margin: 7rem 0 2rem 0;
-    height: 100%;
+    margin-top: 7rem;   
+    height: calc(100vh - 6rem);
     width: 100dvw;
+    padding: 1rem;
 }
