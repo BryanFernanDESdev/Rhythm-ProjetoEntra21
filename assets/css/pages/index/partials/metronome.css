@@ -3,44 +3,69 @@
     border-radius: 1.5rem;
     box-shadow: 0 0 0.4rem var(--dark-color);
     height: calc(100% - 3rem);
-    width: 64rem;
+    min-width: 64rem;
+    width: 33.3dvw;
 }
 
-.counter h2 {
+.counter-heading h2 {
     font-size: 4rem;
     font-weight: 100;
 }
 
+.counter-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
 .counter {
+    margin: 1.5rem auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    margin: 1rem;
+    gap: 1.3rem;
 }
 
-.dots {
-    margin-top: 1rem;
-    margin: 0 auto;
+.tempo {
+    height: 5rem;
+    width: 5rem;
+    background: #ffffff21;
+    border-radius: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    font-size: 3rem;
+    color: var(--white-color);
+    text-shadow: 0 0 0.5rem var(--dark-color);
+    border: 0.1rem solid var(--grey-color);
 }
 
-.dot {
-    height: 3rem;
-    width: 3rem;
-    background: #ffffff57;
-    border-radius: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: white;
-}
-
-#tempo-dot {
+#on-tempo {
     background: var(--primary-color);
-    color: black;
+    color: var(--dark-color);
+}
+
+.metronome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.metronome-bg {
+    position: relative;
+    top: 10rem;
+}
+
+.metronome img{
+    animation: infinite rotate(45deg);
+}
+
+.metronome-base {
+    background: var(--grey-color);
+    width: 30rem;
+    height: 3rem;
+    border-radius: 5rem;
 }

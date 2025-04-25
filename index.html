@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto final - Entra21</title>
     <link rel="stylesheet" href="assets/css/pages/index/index.css">
-    <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="icon" href="/assets/img/global/favicon.png">
 </head>
 
 <body>
@@ -18,36 +18,42 @@
                 <div class="menu-item"></div>
             </a>
 
-            <a class="icon" href="#"><img src="/assets/img/app-icon.svg" alt=""></a>
+            <a class="icon" href="#"><img src="/assets/img/pages/index/app-icon.svg" alt=""></a>
         </nav>
     </header>
     <main class="main">
         <section class="playlist-container">
             <div class="header">
                 <h2>Playlist</h2>
-                <a href=""><img src="/assets/img/folder.svg" alt="" class="left-img"></a>
-                <a href=""><img src="/assets/img/settings.svg" alt="" class="right-img"></a>
+                <a href=""><img src="/assets/img/pages/index/folder.svg" alt="" class="left-img"></a>
+                <a href=""><img src="/assets/img/pages/index/settings.svg" alt="" class="right-img"></a>
             </div>
         </section>
         <section class="metronome-container">
             <div class="header">
                 <h2>Metrônomo</h2>
-                <a href=""><img src="/assets/img/Save.svg" alt="" class="left-img"></a>
-                <a href=""><img src="/assets/img/settings.svg" alt="" class="right-img"></a>
+                <a href=""><img src="/assets/img/pages/index/Save.svg" alt="" class="left-img"></a>
+                <a href=""><img src="/assets/img/pages/index/settings.svg" alt="" class="right-img"></a>
             </div>
 
-            <div class="counter">
+            <div class="counter-heading">
                 <h2 id="bpm">120BPM</h2>
                 <h2 id="compass">4/4</h2>
             </div>
 
-            <div class="dots">
-                <div class="dot" id="tempo-dot">1</div>
-                <div class="dot">2</div>
-                <div class="dot">3</div>
-                <div class="dot">4</div>
+            <div class="counter">
+                <div class="tempo" id="on-tempo">1</div>
+                <div class="tempo">2</div>
+                <div class="tempo">3</div>
+                <div class="tempo">4</div>
             </div>
 
+
+            <div class="metronome">
+                <img src="/assets/img/pages/index/metronome-bg.svg" alt="" class="metronome-bg"></img>
+                <img src="/assets/img/pages/index/pointer.svg" alt="" class="metronome-pointer">
+                <div class="metronome-base"></div>
+            </div>
         </section>
     </main>
 </body>
