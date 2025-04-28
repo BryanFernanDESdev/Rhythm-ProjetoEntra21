@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <a class="menu" href="#">
+            <a class="menu" onclick="changeMenu()">
                 <div class="menu-item"></div>
                 <div class="menu-item"></div>
                 <div class="menu-item"></div>
@@ -20,7 +20,25 @@
 
             <a class="icon" href="#"><img src="/assets/img/pages/index/app-icon.svg" alt=""></a>
         </nav>
+
     </header>
+
+    <div id="menu-hamburguer">
+        <div class="menu-bg">
+            <div class="title">
+                <h2>Menu</h2>
+                <div class="close-icon" onclick="changeMenu()">
+                    <div id="left"></div>
+                    <div id="right"></div>
+                </div>
+            </div>
+            <a href="">A</a>
+            <a href="">b</a>
+            <a href="">c</a>
+            <a href="">d</a>
+        </div>
+    </div>
+
     <main class="main">
         <section class="playlist-container">
             <div class="header">
@@ -56,6 +74,7 @@
             </div>
         </section>
     </main>
+    <script src="./assets/js/global/hamburguer-menu.js"></script>
 </body>
 
 </html>
