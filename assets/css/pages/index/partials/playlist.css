@@ -1,7 +1,0 @@
-.playlist-container {
-    background: var(--dark-color);
-    border-radius: 1.5rem;
-    box-shadow: 0 0 0.4rem var(--dark-color);
-    height: calc(100% - 3rem);
-    width: calc(65.7% - 1rem);
-}
