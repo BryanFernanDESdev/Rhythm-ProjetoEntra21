@@ -117,9 +117,9 @@
 	style="display: {none ? 'none' : ''}"
 >
 	<div class="w-2xl h-[500px] rounded-2xl bg-zinc-950 p-4">
-		<h2 class="text-center text-white capitalize font-bold">menu</h2>
+		<h2 class="text-center text-white capitalize font-bold mt-6">menu</h2>
 
-        <div class="flex flex-col mt-10 gap-8">
+        <div class="flex flex-col mt-5 gap-8">
 <Button 
 title='Playlists'
 href='/'
