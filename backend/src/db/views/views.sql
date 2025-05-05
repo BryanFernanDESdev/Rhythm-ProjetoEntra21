@@ -56,6 +56,3 @@ SELECT
     su.criado_em AS spotify_vinculado_em
 FROM usuarios u
 LEFT JOIN spotify_user su ON u.id = su.usuario_id;
-
-
-

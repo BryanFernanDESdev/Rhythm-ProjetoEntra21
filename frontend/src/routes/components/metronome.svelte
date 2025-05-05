@@ -1,5 +1,6 @@
 <script>
 	import Settings from './Settings.svelte';
+	import Tempo from '$lib/Tempo.svelte';
 
 	let none = $state(true);
 	let bpm = $state(120);
@@ -13,7 +14,7 @@
 	let metronome = () => {
 		setInterval(() => {
 			contador++;
-			if (contador > 6) contador = 1;
+			if (contador > 4) contador = 1;
 			console.log(contador);
 		}, calculaVelocidade(bpm));
 	};
@@ -36,8 +37,12 @@
 		</button>
 	</div>
 	<h2 class="mt-4 text-center text-4xl font-thin text-white">{bpm}Bpm {tempo}</h2>
-
-	<button onclick={iniciaMetronomo}>{contador}</button>
+	<div class="flex justify-center items-center gap-2 mt-3">
+		<Tempo num=1 />
+		<Tempo num=2 />
+		<Tempo num=3 />
+		<Tempo num=4 />
+	</div>
 </div>
 
 <div
