@@ -1,7 +1,7 @@
 <script>
-let {num} = $props()
+let {num, tempo} = $props()
 </script>
 
-<div class="rounded-full size-10 bg-green-400 flex justify-center items-center select-none text-2xl font-sans">
+<div class={tempo?'tempo-on-focus':'tempo'}>
 {num}
 </div>

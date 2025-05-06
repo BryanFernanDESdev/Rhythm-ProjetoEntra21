@@ -3,25 +3,28 @@
 	import Tempo from '$lib/Tempo.svelte';
 
 	let none = $state(true);
-	let bpm = $state(120);
+	let bpm = $state(120)
 	let tempo = $state('4/4');
 	let contador = $state(0);
 
-	function calculaVelocidade(bpm) {
+	function calculaVelocidade() {
 		return (60 / bpm) * 1000;
 	}
 
-	let metronome = () => {
-		setInterval(() => {
+	let metronome = setInterval(() => {
 			contador++;
 			if (contador > 4) contador = 1;
-			console.log(contador);
-		}, calculaVelocidade(bpm));
-	};
+		}, calculaVelocidade());
+
 
 	function iniciaMetronomo() {
-		clearInterval(metronome);
-		return metronome();
+		clearInterval(metronome());
+		metronome();
+		return contador = 0;
+	}
+
+	function checkTempo(time) {
+		return contador === time;
 	}
 </script>
 
@@ -37,12 +40,13 @@
 		</button>
 	</div>
 	<h2 class="mt-4 text-center text-4xl font-thin text-white">{bpm}Bpm {tempo}</h2>
-	<div class="flex justify-center items-center gap-2 mt-3">
-		<Tempo num=1 />
-		<Tempo num=2 />
-		<Tempo num=3 />
-		<Tempo num=4 />
+	<div class="mt-3 flex items-center justify-center gap-2">
+		<Tempo num="1" tempo={checkTempo(1)} />
+		<Tempo num="2" tempo={checkTempo(2)} />
+		<Tempo num="3" tempo={checkTempo(3)} />
+		<Tempo num="4" tempo={checkTempo(4)} />
 	</div>
+	<input onclick={iniciaMetronomo} bind:value={bpm} type="number" class="rounded-4xl size-10 bg-red-600"/>
 </div>
 
 <div
