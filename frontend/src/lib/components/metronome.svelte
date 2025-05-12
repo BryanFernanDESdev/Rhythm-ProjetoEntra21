@@ -1,9 +1,12 @@
 <script>
+	import Forward from './metronome-partials/Forward.svelte';
+	import Pause from './metronome-partials/Pause.svelte';
 	import Settings from './metronome-partials/Settings.svelte';
+	import Sound from './metronome-partials/Sound.svelte';
 	import Tempo from './metronome-partials/Tempo.svelte';
 
 	let none = $state(true);
-	let bpm = $state(120)
+	let bpm = $state(120);
 	let tempo = $state('4/4');
 	let contador = $state(0);
 
@@ -12,23 +15,29 @@
 	}
 
 	let metronome = setInterval(() => {
-			contador++;
-			if (contador > 4) contador = 1;
-		}, calculaVelocidade());
-
+		contador++;
+		if (contador > 4) contador = 1;
+	}, calculaVelocidade());
 
 	function iniciaMetronomo() {
 		clearInterval(metronome());
 		metronome();
-		return contador = 0;
+		return (contador = 0);
 	}
 
 	function checkTempo(time) {
 		return contador === time;
 	}
+	let [num, src, artist, song, time] = [
+		1,
+		'https://cdn-images.dzcdn.net/images/cover/f0282817b697279e56df13909962a54a/1900x1900-000000-80-0-0.jpg',
+		'Nirvana',
+		'Polly',
+		'1:43'
+	];
 </script>
 
-<div class="w-4xl m-1 mb-0 h-[99%] rounded bg-zinc-950 p-4 shadow shadow-neutral-950">
+<section class="w-4xl m-1 mb-0 h-[99%] rounded bg-zinc-950 p-4 shadow shadow-neutral-950">
 	<div class="flex">
 		<h3
 			class="mx-auto select-none text-center text-xl text-white duration-100 hover:text-green-400 hover:underline"
@@ -46,8 +55,34 @@
 		<Tempo num="3" tempo={checkTempo(3)} />
 		<Tempo num="4" tempo={checkTempo(4)} />
 	</div>
-	<input onclick={iniciaMetronomo} bind:value={bpm} type="number" class="rounded-4xl size-10 bg-red-600"/>
-</div>
+
+	<div
+		class="w-xs relative -z-0 mx-auto -mb-0.5 mt-10 h-1 rounded-2xl bg-gray-400 bg-gradient-to-l from-0% to-100%"
+	>
+		<div class="rounded-2x h-1 w-[50%] bg-blue-700"></div>
+	</div>
+	<section
+		class="w-sm relative top-0 z-0 mx-auto flex h-12 items-center justify-center rounded-full bg-gray-900 shadow-sm shadow-gray-950"
+	>
+		<div class="flex-1/3 z- flex select-none items-center justify-center gap-1">
+			<p class="ml-1 mr-1.5 text-2xl text-white">{num}</p>
+			<img {src} class="size-10 rounded-sm" alt="album cover" />
+			<div class="text-white">
+				<p class="-mb-1 text-xs duration-100 hover:text-blue-500 hover:underline">{artist}</p>
+				<p class="text-xl font-semibold duration-100 hover:text-blue-500 hover:underline">{song}</p>
+			</div>
+		</div>
+		<div class="flex-1/3 flex items-center justify-center">
+			<Forward rotate={true} />
+			<Pause />
+			<Forward />
+		</div>
+		<div class="flex-1/3 flex items-center justify-center gap-1">
+			<p class="text-xs text-white">{time} - <span class="text-gray-700">{time}</span></p>
+			<Sound />
+		</div>
+	</section>
+</section>
 
 <div
 	class="absolute top-0 flex h-screen w-screen items-center justify-center bg-zinc-900/60"
