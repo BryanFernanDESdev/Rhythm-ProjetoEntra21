@@ -1,6 +1,6 @@
 <script>
-	import Settings from './Settings.svelte';
-	import Tempo from '$lib/Tempo.svelte';
+	import Settings from './metronome-partials/Settings.svelte';
+	import Tempo from './metronome-partials/Tempo.svelte';
 
 	let none = $state(true);
 	let bpm = $state(120)

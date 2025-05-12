@@ -3,7 +3,7 @@
 
 </script>
 
-<a onclick={(none = !none)} key aria-label="Menu button">
+<button onclick={(none = !none)} key aria-label="Menu button">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 24 24"
@@ -16,5 +16,5 @@
 			clip-rule="evenodd"
 		/>
 	</svg>
-</a>
+</button>
 
