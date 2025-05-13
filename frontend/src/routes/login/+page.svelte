@@ -1,5 +1,18 @@
 <script>
 	import Background from '$lib/components/background.svelte';
+	let src = [
+		'https://www.festivalpro.com/articles/1568.png',
+		'https://guitarglissando.com/wp-content/uploads/2022/11/elecback-e1667796666445.jpg',
+		'https://studiosol-a.akamaihd.net/tb/letras-blog/wp-content/uploads/2019/04/5a78f4c-shows_internacionais.jpg',
+		'https://tse4.mm.bing.net/th/id/OIP.9p6SQjpCbKT0REfObS1WQwHaEo?cb=iwc2&w=1600&h=1000&rs=1&pid=ImgDetMain'
+	];
+	let num = 0;
+	setInterval(() => {
+		if (num === src.length - 1) {
+			return (num = 0);
+		}
+		num++;
+	}, 10000);
 </script>
 
 <Background />
@@ -10,12 +23,17 @@
 
 <main class="flex h-screen w-screen items-center justify-center">
 	<section
-		class="w-4xl flex h-[600px] max-h-[75dvh] max-w-5xl rounded bg-gray-950 shadow-sm shadow-black"
+		class="w-4xl flex h-[600px] max-h-[75dvh] max-w-5xl rounded border border-gray-900 bg-gray-950 shadow-sm shadow-black"
 	>
 		<div
-			class="flex-2/6 h-full bg-gray-900 bg-[url(https://www.festivalpro.com/articles/1568.png)] bg-cover bg-center"
+			rel="preload"
+			as="img"
+			class="flex-2/6 h-full bg-gray-900 bg-cover bg-center"
+			style="background-image: url({src[num]});"
 		>
-			<div class="relative bottom-0 left-0 right-0 top-0 h-full w-full bg-gray-950/70">
+			<div
+				class="relative bottom-0 left-0 right-0 top-0 h-full w-full bg-gray-950/50 transition-colors duration-200  hover:bg-gray-950/30"
+			>
 				<h2
 					class="text-shadow-lg pt-10 text-center font-sans text-2xl font-semibold text-white hover:underline"
 				>
@@ -26,23 +44,23 @@
 		<div
 			class="flex-2/4 flex h-full flex-col items-center justify-center gap-4 bg-neutral-950/80 text-white"
 		>
-			<p class="capitalize text-gray-200">Entrar com uma conta</p>
+			<p class="text-center capitalize text-gray-200">Entrar com uma conta</p>
 			<input
 				type="text"
 				name="usuario"
 				id="usuario"
 				placeholder="Usuario"
-				class="w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-gray-900"
+				class="w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
 			/>
+
 			<input
 				type="password"
 				name="senha"
 				id="senha"
 				placeholder="Senha"
-				class="w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-gray-900"
+				class=": w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
 			/>
-
-			<div class="mt-3 flex gap-3">
+			<div class="mt-1 flex gap-3">
 				<a href="/Login"
 					><img
 						class="size-5"
@@ -76,7 +94,7 @@
 				>
 			</div>
 			<p class="text-sm text-gray-300">
-				não lembrar a senha? <a href="/Login" class="text-shadow-2xs text-blue-600 hover:underline"
+				não lembra a senha? <a href="/Login" class="text-shadow-2xs text-blue-600 hover:underline"
 					>Redefinir senha</a
 				>
 			</p>
