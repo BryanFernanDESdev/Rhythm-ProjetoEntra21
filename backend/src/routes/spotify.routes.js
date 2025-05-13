@@ -1,10 +1,11 @@
-const express = require("express");
-const router = express.Router();
-const connection = require("../config/db");
-const {
+import Router from 'express';
+import connection from '../config/db.js';
+import {
   getSpotifyAccessToken,
-  getSpotifyUserData,
-} = require("../services/spotifyService");
+  getSpotifyUserData
+} from '../services/spotifyService.js';
+
+const router = Router();
 
 router.get("/login", (req, res) => {
   const authUrl = `https://accounts.spotify.com/authorize?client_id=${process.env.SPOTIFY_CLIENT_ID}&response_type=code&redirect_uri=${process.env.SPOTIFY_REDIRECT_URI}&scope=playlist-read-private playlist-read-collaborative`;
@@ -86,4 +87,4 @@ router.get("/callback", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router

@@ -1,13 +1,12 @@
-const express = require("express");
-const dotenv = require("dotenv");
-dotenv.config();
+import express from 'express';
+import cors from 'cors';
+import spotifyRoutes from '../routes/spotify.routes.js'
 
 const app = express();
 const port = process.env.PORT || 3000;
+app.use(cors())
 
-const spotifyRoutes = require("./routes/spotifyRoutes");
-
-app.use("/", spotifyRoutes);
+app.use(spotifyRoutes);
 
 app.get("/", (req, res) => {
   res.send("Servidor rodando!");

@@ -1,6 +1,6 @@
-const axios = require("axios");
+import axios from 'axios'
 
-const getSpotifyAccessToken = async (code, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REDIRECT_URI) => {
+export const getSpotifyAccessToken = async (code, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REDIRECT_URI) => {
   try {
     const response = await axios.post("https://accounts.spotify.com/api/token", null, {
       params: {
@@ -20,7 +20,7 @@ const getSpotifyAccessToken = async (code, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SEC
   }
 };
 
-const getSpotifyUserData = async (accessToken) => {
+export const getSpotifyUserData = async (accessToken) => {
   try {
     const response = await axios.get("https://api.spotify.com/v1/me", {
       headers: {
@@ -33,7 +33,3 @@ const getSpotifyUserData = async (accessToken) => {
   }
 };
 
-module.exports = {
-  getSpotifyAccessToken,
-  getSpotifyUserData
-};
