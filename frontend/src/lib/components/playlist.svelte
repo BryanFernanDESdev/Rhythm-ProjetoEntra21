@@ -1,5 +1,5 @@
 <script>
-	import Settings from './metronome-partials/Settings.svelte';
+	import Settings from '$lib/svg/Settings.svelte';
 
 	let none = $state(true);
 </script>
