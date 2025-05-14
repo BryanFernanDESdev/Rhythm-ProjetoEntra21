@@ -17,22 +17,18 @@
 
 <Background />
 
-<div
-	class="bg-linear-to-tr fixed bottom-0 left-0 right-0 top-0 -z-10 from-slate-900 to-gray-950"
-></div>
-
 <main class="flex h-screen w-screen items-center justify-center">
 	<section
-		class="w-4xl flex h-[600px] max-h-[75dvh] max-w-5xl rounded border border-gray-900 bg-gray-950 shadow-sm shadow-black"
+		class="flex h-[600px] w-4xl max-w-screen max-h-screen rounded border border-gray-900 bg-gray-950 shadow-sm shadow-black mx-4"
 	>
 		<div
 			rel="preload"
 			as="img"
-			class="flex-2/6 h-full bg-gray-900 bg-cover bg-center"
+			class="flex-2/6 h-full bg-gray-900 bg-cover bg-center hidden min-sm:block"
 			style="background-image: url({src[num]});"
 		>
 			<div
-				class="relative bottom-0 left-0 right-0 top-0 h-full w-full bg-gray-950/50 transition-colors duration-200  hover:bg-gray-950/30"
+				class="relative bottom-0 left-0 right-0 top-0 h-full w-full bg-gray-950/50 transition-colors duration-200 hover:bg-gray-950/30"
 			>
 				<h2
 					class="text-shadow-lg pt-10 text-center font-sans text-2xl font-semibold text-white hover:underline"
@@ -63,21 +59,21 @@
 			<div class="mt-1 flex gap-3">
 				<a href="/Login"
 					><img
-						class="size-5"
+						class="size-5 select-none duration-200 hover:scale-125"
 						src="https://cdn-icons-png.flaticon.com/512/3669/3669986.png"
 						alt="spotify logo"
 					/></a
 				>
 				<a href="/Login"
 					><img
-						class="size-5"
+						class="size-5 select-none duration-200 hover:scale-125"
 						src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
 						alt="google logo"
 					/></a
 				>
 				<a href="/Login"
 					><img
-						class="size-5"
+						class="size-5 select-none duration-200 hover:scale-125"
 						src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png "
 						alt="facebook logo"
 					/></a
@@ -85,11 +81,11 @@
 			</div>
 			<div class="flex items-center justify-center gap-5">
 				<button
-					class="h-7 w-20 rounded-full bg-green-600 hover:cursor-pointer hover:bg-green-500 active:border-green-500 active:bg-green-600"
+					class="h-7 w-20 select-none rounded-full bg-green-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-green-500 active:border-green-500 active:bg-green-600"
 					>Login</button
 				>
 				<button
-					class="h-7 w-20 rounded-full bg-blue-600 hover:cursor-pointer hover:bg-blue-500 active:bg-blue-600"
+					class="h-7 w-20 select-none rounded-full bg-blue-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-blue-500 active:bg-blue-600"
 					href="/cadastro">Cadastrar</button
 				>
 			</div>

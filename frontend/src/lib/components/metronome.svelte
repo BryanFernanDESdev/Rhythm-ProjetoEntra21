@@ -1,9 +1,9 @@
 <script>
-	import Forward from './metronome-partials/Forward.svelte';
-	import Pause from './metronome-partials/Pause.svelte';
-	import Settings from './metronome-partials/Settings.svelte';
-	import Sound from './metronome-partials/Sound.svelte';
-	import Tempo from './metronome-partials/Tempo.svelte';
+	import Forward from '$lib/svg/Forward.svelte';
+	import Pause from '$lib/svg/Pause.svelte';
+	import Settings from '$lib/svg/Settings.svelte';
+	import Sound from '$lib/svg/Sound.svelte';
+	import Tempo from '$lib/svg/Tempo.svelte';
 
 	let none = $state(true);
 	let bpm = $state(120);
@@ -28,6 +28,7 @@
 	function checkTempo(time) {
 		return contador === time;
 	}
+
 	let [num, src, artist, song, time] = [
 		1,
 		'https://cdn-images.dzcdn.net/images/cover/f0282817b697279e56df13909962a54a/1900x1900-000000-80-0-0.jpg',
@@ -37,7 +38,7 @@
 	];
 </script>
 
-<section class="w-4xl m-1 mb-0 h-[99%] rounded bg-zinc-950 p-4 shadow shadow-neutral-950">
+<section class=" flex-1/3 grow-0 m-1 mb-0 h-[99%] rounded bg-zinc-950 p-4 shadow shadow-neutral-950">
 	<div class="flex">
 		<h3
 			class="mx-auto select-none text-center text-xl text-white duration-100 hover:text-green-400 hover:underline"
@@ -62,9 +63,9 @@
 		<div class="rounded-2x h-1 w-[50%] bg-blue-700"></div>
 	</div>
 	<section
-		class="w-sm relative top-0 z-0 mx-auto flex h-12 items-center justify-center rounded-full bg-gray-900 shadow-sm shadow-gray-950"
+		class="w-sm relative top-0 mx-auto flex h-12 items-center justify-center rounded-full bg-gray-900 shadow-sm shadow-gray-950"
 	>
-		<div class="flex-1/3 z- flex select-none items-center justify-center gap-1">
+		<div class="flex-1/3 flex select-none items-center justify-center gap-1">
 			<p class="ml-1 mr-1.5 text-2xl text-white">{num}</p>
 			<img {src} class="size-10 rounded-sm" alt="album cover" />
 			<div class="text-white">

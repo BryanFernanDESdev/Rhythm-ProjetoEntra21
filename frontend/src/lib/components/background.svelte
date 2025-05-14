@@ -1,2 +1,3 @@
-<div class="fixed top-0 right-0 left-0 bottom-0 bg-zinc-800 -z-10">
-</div>
+<div
+	class="bg-linear-to-tr fixed bottom-0 left-0 right-0 top-0 -z-10 from-slate-900 to-gray-950"
+></div> 
