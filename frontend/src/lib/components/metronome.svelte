@@ -6,7 +6,7 @@
 	import Tempo from '$lib/svg/Tempo.svelte';
 
 	let none = $state(true);
-	let bpm = $state(60);
+	let bpm = $state(200);
 	let tempo = $state('4/4');
 	let contador = $state(0);
 
@@ -16,7 +16,6 @@
 
 	let metronome = setInterval(() => {
 		contador++;
-		console.log(contador);
 		if (contador > 4) contador = 1;
 	}, calculaVelocidade());
 
@@ -39,7 +38,7 @@
 	];
 
 	// let width = $state(0)
-	// setInterval(()=>{
+	// const progressBar = setInterval(()=>{
 	// 	width++
 	// 	el.style.width = `${width}%`
 	// },1000)
@@ -58,7 +57,7 @@
 			<Settings />
 		</button>
 	</div>
-	<div class="">
+	<div>
 		<h2 class="mt-4 text-center text-4xl font-thin text-white">{bpm}Bpm {tempo}</h2>
 		<div class="mt-3 flex items-center justify-center gap-2">
 			<Tempo num="1" tempo={checkTempo(1)} />
@@ -72,7 +71,7 @@
 		<div
 			class="w-xs relative -z-0 mx-auto -mb-0.5 mt-10 h-1 rounded-2xl bg-gray-400 bg-gradient-to-l from-0% to-100%"
 		>
-			<div class="rounded-2x h-1 bg-blue-700" id="progressBar"></div>
+			<div class="rounded-2x h-1 bg-blue-700 w-4"></div>
 		</div>
 		<section
 			class="w-sm relative top-0 mx-auto flex h-12 items-center justify-center rounded-full bg-gray-900 shadow-sm shadow-gray-950"
