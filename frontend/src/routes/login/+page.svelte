@@ -19,12 +19,12 @@
 
 <main class="flex h-screen w-screen items-center justify-center">
 	<section
-		class="flex h-[600px] w-4xl max-w-screen max-h-screen rounded border border-gray-900 bg-gray-950 shadow-sm shadow-black mx-4"
+		class="w-4xl max-w-screen mx-4 flex h-[600px] max-h-screen rounded border border-gray-900 bg-gray-950 shadow-sm shadow-black"
 	>
 		<div
 			rel="preload"
 			as="img"
-			class="flex-2/6 h-full bg-gray-900 bg-cover bg-center hidden min-sm:block"
+			class="flex-2/6 min-sm:block hidden h-full bg-gray-900 bg-cover bg-center"
 			style="background-image: url({src[num]});"
 		>
 			<div

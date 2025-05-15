@@ -1,58 +1,100 @@
 <script>
 	import Background from '$lib/components/background.svelte';
+	let src = [
+		'https://www.festivalpro.com/articles/1568.png',
+		'https://guitarglissando.com/wp-content/uploads/2022/11/elecback-e1667796666445.jpg',
+		'https://studiosol-a.akamaihd.net/tb/letras-blog/wp-content/uploads/2019/04/5a78f4c-shows_internacionais.jpg',
+		'https://tse4.mm.bing.net/th/id/OIP.9p6SQjpCbKT0REfObS1WQwHaEo?cb=iwc2&w=1600&h=1000&rs=1&pid=ImgDetMain'
+	];
+	let num = 0;
+	setInterval(() => {
+		if (num === src.length - 1) {
+			return (num = 0);
+		}
+		num++;
+	}, 10000);
 </script>
 
 <Background />
 
-<div
-	class="bg-linear-to-tr fixed bottom-0 left-0 right-0 top-0 -z-10 from-slate-900 to-gray-950"
-></div>
-
 <main class="flex h-screen w-screen items-center justify-center">
 	<section
-		class="w-4xl flex h-[600px] max-h-[75dvh] max-w-5xl rounded bg-gray-950 shadow-sm shadow-black"
+		class="w-4xl max-w-screen mx-4 flex h-[600px] max-h-screen rounded border border-gray-900 bg-gray-950 shadow-sm shadow-black"
 	>
-		<div class="flex-2/6 h-full bg-gray-900 p-5">
-			<h2
-				class="text-shadow-lg mt-10 text-center font-sans text-2xl font-semibold text-white hover:underline"
+		<div
+			rel="preload"
+			as="img"
+			class="flex-2/6 min-sm:block hidden h-full bg-gray-900 bg-cover bg-center"
+			style="background-image: url({src[num]});"
+		>
+			<div
+				class="relative bottom-0 left-0 right-0 top-0 h-full w-full bg-gray-950/50 transition-colors duration-200 hover:bg-gray-950/30"
 			>
-				Cadastro
-			</h2>
+				<h2
+					class="text-shadow-lg pt-10 text-center font-sans text-2xl font-semibold text-white hover:underline"
+				>
+					Cadastro
+				</h2>
+			</div>
 		</div>
 		<div
 			class="flex-2/4 flex h-full flex-col items-center justify-center gap-4 bg-neutral-950/80 text-white"
 		>
-			<p class="capitalize text-gray-200">Criar uma Conta</p>
+			<p class="text-center capitalize text-gray-200">Criar uma conta</p>
 			<input
 				type="email"
-				name="email"
+				name="Email"
 				id="email"
 				placeholder="Email"
-				class="w-[60%] border-b bg-gray-900/20 px-4 pb-2 pt-3 outline-none placeholder:text-lg focus:bg-gray-900"
+				class="w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
 			/>
+
 			<input
 				type="password"
 				name="senha"
 				id="senha"
 				placeholder="Senha"
-				class="w-[60%] border-b bg-gray-900/20 px-4 pb-2 pt-3 outline-none placeholder:text-lg focus:bg-gray-900"
+				class=": w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
 			/>
 			<input
 				type="password"
-				name="senha"
+				name="senha-repetir"
 				id="senha"
-				placeholder="Repetir Senha"
-				class="w-[60%] border-b bg-gray-900/20 px-4 pb-2 pt-3 outline-none placeholder:text-lg focus:bg-gray-900"
+				placeholder="Repetir senha"
+				class=": w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
 			/>
-			<div class="mt-3 flex gap-3">
+			<div class="mt-1 flex gap-3">
+				<a href="/Login"
+					><img
+						class="size-5 select-none duration-200 hover:scale-125"
+						src="https://cdn-icons-png.flaticon.com/512/3669/3669986.png"
+						alt="spotify logo"
+					/></a
+				>
+				<a href="/Login"
+					><img
+						class="size-5 select-none duration-200 hover:scale-125"
+						src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+						alt="google logo"
+					/></a
+				>
+				<a href="/Login"
+					><img
+						class="size-5 select-none duration-200 hover:scale-125"
+						src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png "
+						alt="facebook logo"
+					/></a
+				>
+			</div>
+			<div class="flex items-center justify-center gap-5">
 				<button
-					class=" rounded-full bg-green-600 hover:cursor-pointer hover:bg-green-500 active:border-green-500 active:bg-green-600 p-1 px-3"
-					>Cadastrar</button
+					class="h-7 w-20 select-none rounded-full bg-green-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-green-500 active:bg-green-600"
+					href="/cadastro">Cadastrar</button
 				>
 			</div>
 			<p class="text-sm text-gray-300">
-				já possui uma conta? <a href="/Login" class="text-shadow-2xs text-blue-600 hover:underline"
-					>Login</a
+				não lembra a senha? <a href="/Login" class="text-shadow-2xs text-blue-600 hover:underline"
+					>Redefinir senha</a
 				>
 			</p>
 		</div>

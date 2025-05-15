@@ -5,7 +5,7 @@
 	import Logo from '$lib/svg/Logo.svelte';
 	import Button from '$lib/svg/MenuButton.svelte';
 
-	let none = $state(false);
+	let none = $state(true);
 </script>
 
 <header class="fixed left-0 right-0 top-0 z-20 min-h-10 bg-zinc-950">
