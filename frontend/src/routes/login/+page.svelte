@@ -19,7 +19,7 @@
 
 <main class="flex h-screen w-screen items-center justify-center">
 	<section
-		class="w-4xl max-w-screen mx-4 flex h-[600px] max-h-screen rounded border border-gray-900 bg-gray-950 shadow-sm shadow-black"
+		class="w-4xl max-w-screen mx-4 flex h-[600px] max-h-screen rounded border border-gray-900 bg-gray-950 shadow shadow-blue-600"
 	>
 		<div
 			rel="preload"

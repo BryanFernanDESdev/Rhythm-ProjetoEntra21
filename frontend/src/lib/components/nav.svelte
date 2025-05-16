@@ -4,11 +4,12 @@
 	import Microphone from '$lib/svg/Microphone.svelte';
 	import Logo from '$lib/svg/Logo.svelte';
 	import Button from '$lib/svg/MenuButton.svelte';
+	import Close from '$lib/svg/Close.svelte';
 
 	let none = $state(true);
 </script>
 
-<header class="fixed left-0 right-0 top-0 z-20 min-h-10 bg-zinc-950">
+<header class="fixed left-0 right-0 top-0 z-20 min-h-10 bg-zinc-950 shadow-2xs shadow-blue-600/80">
 	<nav class="flex items-center justify-between px-5">
 		<button onclick={(none = !none)}>
 			<Hamburguer />
@@ -23,17 +24,22 @@
 			<Microphone />
 		</div>
 
-		<Logo />
+		<div class="flex text-white text-wh text-lg gap-4">
+			<h1 class="hover:text-blue-500 duration-150 font-bold">Rhythm</h1>
+			<Logo />
+		</div>
 	</nav>
 </header>
 
 <div
-	class="absolute flex h-screen w-screen items-center justify-center bg-zinc-900/60"
+	class="absolute flex h-screen w-screen items-center justify-center bg-white/15 z-10"
 	style="display: {none ? 'none' : ''}"
 >
 	<div class="w-2xl h-[500px] rounded-2xl bg-zinc-950 p-1 z-10">
-		<h2 class="mt-6 text-center font-bold capitalize text-white">Menu</h2>
-
+		<h2 class="mt-6 text-center font-bold capitalize text-white">Menu </h2>
+			<button onclick={none = !none}>
+				<Close />
+			</button>
 		<menu class="flex flex-col justify-center gap-6 h-[80%]">
 			<Button title="Playlists" href="/" />
 			<Button title="Documentação" href="/" />

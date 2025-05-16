@@ -2,7 +2,7 @@
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 24 24"
 	fill="currentColor"
-	class="size-10 fill-green-400 hover:cursor-pointer"
+	class="size-10 fill-blue-400 hover:cursor-pointer"
 >
 	<path
 		fill-rule="evenodd"

@@ -6,7 +6,7 @@
 	import Tempo from '$lib/svg/Tempo.svelte';
 
 	let none = $state(true);
-	let bpm = $state(200);
+	let bpm = $state(120.34);
 	let tempo = $state('4/4');
 	let contador = $state(0);
 
@@ -45,7 +45,7 @@
 </script>
 
 <section
-	class="w-2xl m-1 mb-0 flex h-[99%] grow-0 flex-col justify-between rounded bg-zinc-950 p-4 shadow shadow-neutral-950"
+	class="w-2xl m-1 mb-0 flex h-[99%] grow-0 flex-col justify-between rounded bg-zinc-950 p-4 shadow-xs shadow-blue-600" 
 >
 	<div class="flex">
 		<h3
@@ -57,7 +57,7 @@
 			<Settings />
 		</button>
 	</div>
-	<div>
+	<div class="flex-5/6">
 		<h2 class="mt-4 text-center text-4xl font-thin text-white">{bpm}Bpm {tempo}</h2>
 		<div class="mt-3 flex items-center justify-center gap-2">
 			<Tempo num="1" tempo={checkTempo(1)} />
