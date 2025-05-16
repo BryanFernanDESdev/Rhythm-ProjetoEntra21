@@ -14,7 +14,7 @@
 </script>]
 
 <div
-	class="w-xs relative -z-0 mx-auto -mb-0.5 mt-10 h-1 rounded-2xl bg-gray-400 bg-gradient-to-l from-0% to-100%"
+	class="w-xs relative -z-0 mx-auto -mb-0.5 mt-10 h-1 rounded-2xl bg-gray-400"
 >
 	<div class="rounded-2x h-1 w-4 bg-blue-700"></div>
 </div>
@@ -25,8 +25,8 @@
 		<p class="ml-1 mr-1.5 text-2xl text-white">{num}</p>
 		<img {src} class="size-10 rounded-sm" alt="album cover" />
 		<div class="text-white">
-			<p class="-mb-1 text-xs duration-100 hover:text-blue-500 hover:underline">{artist}</p>
-			<p class="text-xl font-semibold duration-100 hover:text-blue-500 hover:underline">
+			<p class="-mb-1 text-xs duration-100">{artist}</p>
+			<p class="text-xl font-semibold duration-100">
 				{song}
 			</p>
 		</div>
@@ -36,7 +36,7 @@
 		<Pause />
 		<Forward />
 	</div>
-	<div class="flex-1/3 flex items-center justify-center gap-1">
+	<div class="flex-1/3 flex items-center justify-center gap-5">
 		<p class="text-xs text-white">{time} - <span class="text-gray-700">{time}</span></p>
 		<Sound />
 	</div>

@@ -9,7 +9,7 @@
 		viewBox="0 0 102 121"
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg"
-		class="size-6 cursor-pointe"
+		class="size-6 cursor-pointer"
 	>
 		<rect x="0.768188" y="20.7143" width="100.54" height="100.286" rx="50" fill="#1E1E1E" />
 		<circle cx="51.2498" cy="70.8572" r="43.4571" fill="#0A0A0A" />

@@ -3,7 +3,7 @@
 	import Magnifier from '$lib/svg/Magnifier.svelte';
 	import Microphone from '$lib/svg/Microphone.svelte';
 	import Logo from '$lib/svg/Logo.svelte';
-	import Button from '$lib/svg/MenuButton.svelte';
+	import MenuButton from '$lib/components/MenuButton.svelte';
 	import Close from '$lib/svg/Close.svelte';
 
 	let none = $state(true);
@@ -14,11 +14,11 @@
 		<button onclick={(none = !none)}>
 			<Hamburguer />
 		</button>
-		<div class="mx-4 flex w-full max-w-96 items-center justify-center sm:w-96 sm:max-w-fit">
+		<div class="mx-4 flex w-full max-w-96 items-center justify-center sm:w-lg sm:max-w-fit">
 			<Magnifier />
 			<input
 				type="search"
-				class="border-1 in-focus-within:outline-solid flex-3/4 max-h-7 rounded-r-full border-zinc-600 bg-zinc-800 py-1 pl-2 font-semibold text-gray-100 outline-none outline-1 outline-green-100 selection:bg-green-400 selection:text-black hover:bg-zinc-700 active:bg-zinc-800 sm:w-96"
+				class="border-1 flex-3/4 max-h-8 rounded-r-full border-zinc-600 bg-zinc-800 py-1 pl-2 font-semibold text-gray-100 outline-none outline-1 outline-green-100 selection:bg-blue-400 selection:text-black hover:bg-zinc-700 active:bg-zinc-800 sm:w-96"
 				placeholder="Qual música você deseja tocar?"
 			/>
 			<Microphone />
@@ -43,10 +43,10 @@
 			</button>
 		</div>
 		<menu class="flex h-[80%] flex-col justify-center gap-6">
-			<Button title="Playlists" href="/" />
-			<Button title="Documentação" href="/" />
-			<Button title="FAQ" href="/" />
-			<Button title="Saiba Mais" href="/" />
+			<MenuButton title="Playlists" href="/" />
+			<MenuButton title="Documentação" href="/" />
+			<MenuButton title="FAQ" href="/" />
+			<MenuButton title="Saiba Mais" href="/" />
 		</menu>
 	</div>
 </div>

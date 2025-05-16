@@ -1,11 +1,10 @@
 <script>
-
 	import Settings from '$lib/svg/Settings.svelte';
-	import Tempo from '$lib/svg/Tempo.svelte';
+	import Tempo from '$lib/components/Tempo.svelte';
 	import Player from './Player.svelte';
 
 	let none = $state(true);
-	let bpm = $state(120.34);
+	let bpm = $state(1.34);
 	let tempo = $state('4/4');
 	let contador = $state(0);
 
@@ -27,8 +26,6 @@
 	function checkTempo(time) {
 		return contador === time;
 	}
-
-
 
 	// let width = $state(0)
 	// const progressBar = setInterval(()=>{
@@ -53,10 +50,10 @@
 	<div class="flex-5/6">
 		<h2 class="mt-4 text-center text-4xl font-thin text-white">{bpm}Bpm {tempo}</h2>
 		<div class="mt-3 flex items-center justify-center gap-2">
-			<Tempo num="1" tempo={checkTempo(1)} />
-			<Tempo num="2" tempo={checkTempo(2)} />
-			<Tempo num="3" tempo={checkTempo(3)} />
-			<Tempo num="4" tempo={checkTempo(4)} />
+			<Tempo num="1" focus={checkTempo(1)} tempo={true} />
+			<Tempo num="2" focus={checkTempo(2)} tempo={false} />
+			<Tempo num="3" focus={checkTempo(3)} tempo={false} />
+			<Tempo num="4" focus={checkTempo(4)} tempo={false} />
 		</div>
 	</div>
 

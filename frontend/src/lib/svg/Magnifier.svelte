@@ -4,7 +4,7 @@
 	viewBox="0 0 24 24"
 	stroke-width="1.5"
 	stroke="currentColor"
-	class="border-1 size-7 w-10 cursor-pointer rounded-l-full border-zinc-600 bg-zinc-800 stroke-white p-1 hover:bg-zinc-700"
+	class="border-1 size-8 w-10 cursor-pointer rounded-l-full border-zinc-600 bg-zinc-800 stroke-white p-1 hover:bg-zinc-700"
 >
 	<path
 		stroke-linecap="round"
