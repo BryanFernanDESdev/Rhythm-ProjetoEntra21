@@ -1,5 +1,5 @@
 import Router from 'express';
-import connection from '../config/db.js';
+// import connection from '../config/db.js';
 import {
   getSpotifyAccessToken,
   getSpotifyUserData
