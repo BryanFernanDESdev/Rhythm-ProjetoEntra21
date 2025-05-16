@@ -1,4 +1,5 @@
 <script>
+	import Backward from '$lib/svg/Backward.svelte';
 	import Forward from '$lib/svg/Forward.svelte';
 	import Pause from '$lib/svg/Pause.svelte';
 	import Settings from '$lib/svg/Settings.svelte';
@@ -45,11 +46,11 @@
 </script>
 
 <section
-	class="w-2xl m-1 mb-0 flex h-[99%] grow-0 flex-col justify-between rounded bg-zinc-950 p-4 shadow-xs shadow-blue-600" 
+	class="w-2xl shadow-xs m-1 mb-0 flex h-[99%] grow-0 flex-col justify-between rounded bg-zinc-950 p-4 shadow-blue-600"
 >
 	<div class="flex">
 		<h3
-			class="mx-auto select-none text-center text-xl text-white duration-100 hover:text-green-400 hover:underline"
+			class="mx-auto select-none text-center text-xl text-white duration-100 hover:text-blue-400 hover:underline"
 		>
 			Metrônomo
 		</h3>
@@ -71,7 +72,7 @@
 		<div
 			class="w-xs relative -z-0 mx-auto -mb-0.5 mt-10 h-1 rounded-2xl bg-gray-400 bg-gradient-to-l from-0% to-100%"
 		>
-			<div class="rounded-2x h-1 bg-blue-700 w-4"></div>
+			<div class="rounded-2x h-1 w-4 bg-blue-700"></div>
 		</div>
 		<section
 			class="w-sm relative top-0 mx-auto flex h-12 items-center justify-center rounded-full bg-gray-900 shadow-sm shadow-gray-950"
@@ -87,9 +88,9 @@
 				</div>
 			</div>
 			<div class="flex-1/3 flex items-center justify-center">
-				<Forward rotate={true} />
+				<Backward />
 				<Pause />
-				<Forward />
+				<Forward/>
 			</div>
 			<div class="flex-1/3 flex items-center justify-center gap-1">
 				<p class="text-xs text-white">{time} - <span class="text-gray-700">{time}</span></p>

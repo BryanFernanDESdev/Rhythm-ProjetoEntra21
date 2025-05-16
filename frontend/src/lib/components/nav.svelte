@@ -9,7 +9,7 @@
 	let none = $state(true);
 </script>
 
-<header class="fixed left-0 right-0 top-0 z-20 min-h-10 bg-zinc-950 shadow-2xs shadow-blue-600/80">
+<header class="shadow-2xs fixed left-0 right-0 top-0 z-20 min-h-10 bg-gray-950 shadow-blue-600/60">
 	<nav class="flex items-center justify-between px-5">
 		<button onclick={(none = !none)}>
 			<Hamburguer />
@@ -24,23 +24,25 @@
 			<Microphone />
 		</div>
 
-		<div class="flex text-white text-wh text-lg gap-4">
-			<h1 class="hover:text-blue-500 duration-150 font-bold">Rhythm</h1>
+		<div class="text-wh flex gap-4 text-lg text-white">
+			<h1 class="font-bold duration-150 hover:text-blue-500">Rhythm</h1>
 			<Logo />
 		</div>
 	</nav>
 </header>
 
 <div
-	class="absolute flex h-screen w-screen items-center justify-center bg-white/15 z-10"
+	class="absolute z-10 flex h-screen w-screen items-center justify-center bg-white/10"
 	style="display: {none ? 'none' : ''}"
 >
-	<div class="w-2xl h-[500px] rounded-2xl bg-zinc-950 p-1 z-10">
-		<h2 class="mt-6 text-center font-bold capitalize text-white">Menu </h2>
-			<button onclick={none = !none}>
+	<div class="w-2xl z-10 h-[450px] rounded-xl bg-zinc-950 p-1 shadow shadow-gray-950">
+		<div class="w-full flex items-center justify-center">
+			<h2 class="mt-6 mx-auto font-bold capitalize text-white text-center hover:text-blue-500 hover:underline duration-150">Menu</h2>
+			<button onclick={() => (none = !none)} class="-ml-10 mr-4 mt-4">
 				<Close />
 			</button>
-		<menu class="flex flex-col justify-center gap-6 h-[80%]">
+		</div>
+		<menu class="flex h-[80%] flex-col justify-center gap-6">
 			<Button title="Playlists" href="/" />
 			<Button title="Documentação" href="/" />
 			<Button title="FAQ" href="/" />

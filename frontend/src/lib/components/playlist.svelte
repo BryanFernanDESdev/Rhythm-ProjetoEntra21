@@ -7,7 +7,7 @@
 <div class="m-1 mb-0 h-[99%] w-full rounded bg-zinc-950 p-4 shadow-xs shadow-blue-600">
 	<div class="flex">
 		<h2
-			class="mx-auto select-none text-center text-xl text-white duration-100 hover:text-green-400 hover:underline"
+			class="mx-auto select-none text-center text-xl text-white duration-100 hover:text-blue-400 hover:underline"
 		>
 			Playlists
 		</h2>
