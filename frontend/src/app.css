@@ -1,13 +1,13 @@
 @import 'tailwindcss';
 
 .tempo-on-focus{
-    @apply rounded-full size-10 bg-blue-600 flex justify-center items-center select-none text-2xl font-sans text-white border border-blue-600
+    @apply rounded-full size-10 bg-blue-600 flex justify-center items-center select-none text-2xl font-sans text-white scale-110 border-blue-600 border
 }
 
 .tempo{
-    @apply rounded-full size-10 bg-blue-600/25 flex justify-center items-center select-none text-2xl font-sans text-zinc-400 border border-blue-600
+    @apply rounded-full size-10 bg-blue-600/25 flex justify-center items-center select-none text-2xl font-sans text-zinc-400
 }
 
 .tempo-hidden{
-    @apply  rounded-full size-10 bg-blue-600/5 flex justify-center items-center select-none text-2xl font-sans text-zinc-400 border border-blue-600
+    @apply  rounded-full size-10 bg-blue-600/5 flex justify-center items-center select-none text-2xl font-sans text-zinc-400
 }
