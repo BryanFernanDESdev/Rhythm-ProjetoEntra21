@@ -4,7 +4,7 @@
 	viewBox="0 0 24 24"
 	stroke-width="1.5"
 	stroke="currentColor"
-	class="size-8 inline text-right hover:stroke-red-600 duration-150 cursor-pointer stroke-white hover:scale-110 active:scale-90"
+	class="size- cursor-pointer stroke-white"
 >
 	<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
 </svg>

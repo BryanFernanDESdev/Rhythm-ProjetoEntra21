@@ -9,7 +9,7 @@
 	let none = $state(true);
 </script>
 
-<header class="shadow-2xs fixed left-0 right-0 top-0 z-20 min-h-10 bg-gray-950 shadow-blue-600/60">
+<header class="fixed left-0 right-0 top-0 z-20 min-h-10 bg-zinc-950 border-b-blue-500/20 border">
 	<nav class="flex items-center justify-between px-5">
 		<button onclick={(none = !none)}>
 			<Hamburguer />
@@ -35,14 +35,16 @@
 	class="absolute z-10 flex h-screen w-screen items-center justify-center bg-white/10"
 	style="display: {none ? 'none' : ''}"
 >
-	<div class="w-2xl z-10 h-[450px] rounded-xl bg-zinc-950 p-1 shadow shadow-gray-950">
-		<div class="w-full flex items-center justify-center">
-			<h2 class="mt-6 mx-auto font-bold capitalize text-white text-center hover:text-blue-500 hover:underline duration-150">Menu</h2>
-			<button onclick={() => (none = !none)} class="-ml-10 mr-4 mt-4">
-				<Close />
-			</button>
-		</div>
-		<menu class="flex h-[80%] flex-col justify-center gap-6">
+	<div class="w-2xl z-10 h-[450px] bg-zinc-950 p-1 shadow shadow-gray-950">
+
+			<div class="flex items-center">
+				<h2 class="font-bold mx-auto capitalize text-white text-center hover:text-blue-500 duration-50">Menu</h2>
+				<button onclick={() => (none = !none)} class=" hover:bg-red-600 duration-50 h-8 w-8 inline text-right -ml-8">
+					<Close />
+				</button>
+			</div>
+
+		<menu class="flex h-[80%] flex-col justify-center gap-6 items-center mt-5">
 			<MenuButton title="Playlists" href="/" />
 			<MenuButton title="Documentação" href="/" />
 			<MenuButton title="FAQ" href="/" />

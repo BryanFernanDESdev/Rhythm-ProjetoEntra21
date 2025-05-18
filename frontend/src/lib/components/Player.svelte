@@ -11,7 +11,7 @@
 		'Polly',
 		'1:43'
 	];
-</script>]
+</script>
 
 <div
 	class="w-xs relative -z-0 mx-auto -mb-0.5 mt-10 h-1 rounded-2xl bg-gray-400"

@@ -2,9 +2,10 @@
 	import Settings from '$lib/svg/Settings.svelte';
 	import Tempo from '$lib/components/Tempo.svelte';
 	import Player from './Player.svelte';
+	import Close from '$lib/svg/Close.svelte';
 
 	let none = $state(true);
-	let bpm = $state(1.34);
+	let bpm = $state(100);
 	let tempo = $state('4/4');
 	let contador = $state(0);
 
@@ -27,15 +28,10 @@
 		return contador === time;
 	}
 
-	// let width = $state(0)
-	// const progressBar = setInterval(()=>{
-	// 	width++
-	// 	el.style.width = `${width}%`
-	// },1000)
 </script>
 
 <section
-	class="w-2xl shadow-xs m-1 mb-0 flex h-[99%] grow-0 flex-col justify-between rounded bg-zinc-950 p-4 shadow-blue-600"
+	class="w-2xl m-2 flex h-[98.5%] grow-0 flex-col justify-between rounded border border-blue-500/20 bg-zinc-950 p-4"
 >
 	<div class="flex">
 		<h3
@@ -50,7 +46,7 @@
 	<div class="flex-5/6">
 		<h2 class="mt-4 text-center text-4xl font-thin text-white">{bpm}Bpm {tempo}</h2>
 		<div class="mt-3 flex items-center justify-center gap-2">
-			<Tempo num="1" focus={checkTempo(1)} tempo={true} />
+			<Tempo num="1" focus={checkTempo(1)} tempo={false} />
 			<Tempo num="2" focus={checkTempo(2)} tempo={false} />
 			<Tempo num="3" focus={checkTempo(3)} tempo={false} />
 			<Tempo num="4" focus={checkTempo(4)} tempo={false} />
@@ -63,10 +59,16 @@
 </section>
 
 <div
-	class="absolute top-0 flex h-screen w-screen items-center justify-center bg-zinc-900/60"
+	class="fixed z-10 flex h-screen w-screen items-center justify-center bg-white/10"
 	style="display: {none ? 'none' : ''}"
 >
-	<div class="w-2xl h-[500px] rounded-2xl bg-zinc-950 p-4">
-		<h2 class="mt-6 text-center font-bold capitalize text-white">menu</h2>
+	<div class="w-2xl z-10 h-[450px] bg-zinc-950 p-1 shadow shadow-gray-950">
+
+			<div class="flex items-center">
+				<h2 class="font-bold mx-auto capitalize text-white text-center hover:text-blue-500 duration-50">Metrônomo</h2>
+				<button onclick={() => (none = !none)} class=" hover:bg-red-600 duration-50 h-8 w-8 inline text-right -ml-8">
+					<Close />
+				</button>
+			</div>
 	</div>
 </div>
