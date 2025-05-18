@@ -1,7 +1,7 @@
 {
-  "name": "projeto-entra21",
+  "name": "rhythm",
   "version": "1.0.0",
-  "description": "Este projeto foi desenvolvido como parte do programa Entra21. O objetivo é aprimorar nossos conhecimentos em desenvolvimento web, aplicando HTML, CSS e JavaScript para criar uma aplicação funcional e interativa.",
+  "description": "",
   "homepage": "https://github.com/Nicolas121221/Projeto-Entra21#readme",
   "bugs": {
     "url": "https://github.com/Nicolas121221/Projeto-Entra21/issues"
@@ -16,7 +16,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "dev": "node ./src/server.js -w"
   },
   "dependencies": {
     "axios": "^1.9.0",
