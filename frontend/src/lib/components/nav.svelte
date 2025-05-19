@@ -18,8 +18,9 @@
 			<Magnifier />
 			<input
 				type="search"
-				class="border-1 flex-3/4 max-h-8 rounded-r-full border-zinc-600 bg-zinc-800 py-1 pl-2 font-semibold text-gray-100 outline-none outline-1 outline-green-100 selection:bg-blue-400 selection:text-black hover:bg-zinc-700 active:bg-zinc-800 sm:w-96"
+				class="border-1 w-xl max-h-8 rounded-r-full border-zinc-600 bg-zinc-800 py-1 pl-2 font-semibold text-gray-100 outline-none outline-1 outline-green-100 selection:bg-blue-400 selection:text-black hover:bg-zinc-700 active:bg-zinc-800"
 				placeholder="Qual música você deseja tocar?"
+				
 			/>
 			<Microphone />
 		</div>
@@ -32,9 +33,7 @@
 </header>
 
 <div
-	class="absolute z-10 flex h-screen w-screen items-center justify-center bg-white/10"
-	style="display: {none ? 'none' : ''}"
->
+	class="absolute z-10 flex items-center justify-center bg-white/10 transition-discrete delay-75 h-screen w-screen {none ? '-top-[100dvh]' : 'top-0'}">
 	<div class="w-2xl z-10 h-[450px] bg-zinc-950 p-1 shadow shadow-gray-950">
 
 			<div class="flex items-center">
@@ -45,7 +44,7 @@
 			</div>
 
 		<menu class="flex h-[80%] flex-col justify-center gap-6 items-center mt-5">
-			<MenuButton title="Playlists" href="/" />
+			<MenuButton title="Playlists" href="/playlist" />
 			<MenuButton title="Documentação" href="/" />
 			<MenuButton title="FAQ" href="/" />
 			<MenuButton title="Saiba Mais" href="/" />
