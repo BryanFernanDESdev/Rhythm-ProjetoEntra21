@@ -1,4 +1,3 @@
-// src/config/config.js
 import { Sequelize } from 'sequelize';
 import { config } from 'dotenv';
 

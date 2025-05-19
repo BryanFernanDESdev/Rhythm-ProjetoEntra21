@@ -7,6 +7,7 @@ initialize()
 
 const port = process.env.SERVER_PORT;
 const app = express();
+
 app.use(json())
 app.use(cors());
 
