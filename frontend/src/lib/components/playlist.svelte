@@ -1,6 +1,7 @@
 <script>
 	import Settings from '$lib/svg/Settings.svelte';
 	import Close from '$lib/svg/Close.svelte';
+	import PlaylistCard from './PlaylistCard.svelte';
 
 	let none = $state(true);
 </script>
@@ -15,6 +16,36 @@
 		<button onclick={(none = !none)}>
 			<Settings />
 		</button>
+	</div>
+
+	<div class="w-full">
+		<header class="mt-5 h-4 bg-zinc-800">
+			<ul
+				class="text-bold flex select-none items-center justify-between gap-1 text-xs text-gray-400"
+			>
+				<li class="w-10 border-r-2 border-r-zinc-900 text-center">N°</li>
+				<li class="w-[40%] border-r-2 border-r-zinc-900">Música</li>
+				<li class="w-[7.5%] border-r-2 border-r-zinc-900 text-center">Bpm</li>
+				<li class="w-[7.5%] border-r-2 border-r-zinc-900 text-center">Tom</li>
+				<li class="w-[10%] border-r-2 border-r-zinc-900 text-center">Afinação</li>
+				<li class="w-[7.5%] border-r-2 border-r-zinc-900 text-center">Duração</li>
+				<li class="w-[13%] border-r-2 border-r-zinc-900 text-center">Adiconado em</li>
+				<li class="w-[13%] text-center">Opções</li>
+			</ul>
+		</header>
+		<PlaylistCard
+			num="1"
+			musica='Polly'
+			bpm="120.87"
+			tom="C#"
+			afinacao="Padrão"
+			duracao="1:12"
+			data="25/10/2006"
+			src='https://cdn-images.dzcdn.net/images/cover/f0282817b697279e56df13909962a54a/0x1900-000000-80-0-0.jpg'
+			album='Nevermind'
+			artista='Nirvana'
+			artistaUrl='https://i.scdn.co/image/a4e10b79a642e9891383448cbf37d7266a6883d6'
+		/>
 	</div>
 </div>
 
