@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { getTom, getTomById, createTom } from '../controllers/tons.controller.js';
+import { getTom, getTomById} from '../controllers/tons.controller.js';
 
 const router = Router();
 
 router.get('/', getTom);
 router.get('/:id', getTomById);
-router.post('/', createTom);
+router.get('/:id', getTomById);
 
 export default router;

@@ -1,4 +1,3 @@
-import { where } from "sequelize";
 import models from "../models/index.js"
 
 export const getTom = async (req, res) => {
@@ -13,14 +12,6 @@ export const getTomById = async (req, res) => {
     try {
         const id = req.params.id
         const data = await models.Tom.findAll({ where: { id } })
-        res.status(200).send(data)
-    } catch (error) {
-        res.status(401).send(error)
-    }
-}
-export const createTom = async (req, res) => {
-    try {
-        const data = await models.Tom.create(req.params.body)
         res.status(200).send(data)
     } catch (error) {
         res.status(401).send(error)
