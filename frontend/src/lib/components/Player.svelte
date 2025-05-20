@@ -4,7 +4,7 @@
 	import Forward from '$lib/svg/Forward.svelte';
 	import Pause from '$lib/svg/Pause.svelte';
 
-	let [num, src, artist, song, time] = [
+    let [num, src, artist, song, time] = [
 		1,
 		'https://cdn-images.dzcdn.net/images/cover/f0282817b697279e56df13909962a54a/1900x1900-000000-80-0-0.jpg',
 		'Nirvana',
@@ -13,7 +13,9 @@
 	];
 </script>
 
-<div class="w-xs relative -z-0 mx-auto -mb-0.5 mt-10 h-1 rounded-2xl bg-gray-400">
+<div
+	class="w-xs relative -z-0 mx-auto -mb-0.5 mt-10 h-1 rounded-2xl bg-gray-400"
+>
 	<div class="rounded-2x h-1 w-4 bg-blue-700"></div>
 </div>
 <section

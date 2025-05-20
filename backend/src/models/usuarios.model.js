@@ -15,7 +15,7 @@ export default function (sequelize, DataTypes) {
     }
   }, {
     tableName: 'usuarios',
-    timestamps: false
+    timestamps: false // Desativando timestamps do Sequelize para usar criado_em
   });
 
   Usuario.associate = (models) => {

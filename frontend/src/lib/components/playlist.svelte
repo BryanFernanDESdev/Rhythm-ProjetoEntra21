@@ -35,37 +35,34 @@
 		</header>
 		<PlaylistCard
 			num="1"
-			musica="Polly"
+			musica='Polly'
 			bpm="120.87"
 			tom="C#"
 			afinacao="Padrão"
 			duracao="1:12"
 			data="25/10/2006"
-			src="https://cdn-images.dzcdn.net/images/cover/f0282817b697279e56df13909962a54a/0x1900-000000-80-0-0.jpg"
-			album="Nevermind"
-			artista="Nirvana"
-			artistaUrl="https://i.scdn.co/image/a4e10b79a642e9891383448cbf37d7266a6883d6"
+			src='https://cdn-images.dzcdn.net/images/cover/f0282817b697279e56df13909962a54a/0x1900-000000-80-0-0.jpg'
+			album='Nevermind'
+			artista='Nirvana'
+			artistaUrl='https://i.scdn.co/image/a4e10b79a642e9891383448cbf37d7266a6883d6'
 		/>
 	</div>
 </div>
 
 <div
-	class="fixed inset-0 z-10 flex h-[100dvh] w-[100dvw] items-center justify-center bg-white/15 transition-opacity duration-300 {none
-		? 'pointer-events-none opacity-0'
-		: 'opacity-100'}"
+	class="fixed z-10 flex h-screen w-screen items-center justify-center bg-white/10"
+	style="display: {none ? 'none' : ''}"
 >
-	<div
-		class="w-2xl z-10 h-[450px] transform bg-zinc-950 p-1 shadow shadow-gray-950 transition-all duration-300 {none
-			? '-translate-y-20 opacity-0'
-			: 'translate-y-0 opacity-100'}"
-	>
+	<div class="w-2xl z-10 h-[450px] bg-zinc-950 p-1 shadow shadow-gray-950">
 		<div class="flex items-center">
-			<h2 class="mx-auto text-center font-bold capitalize text-white hover:text-blue-500">
+			<h2
+				class="duration-50 mx-auto text-center font-bold capitalize text-white hover:text-blue-500"
+			>
 				Playlists
 			</h2>
 			<button
 				onclick={() => (none = !none)}
-				class="-ml-8 inline h-8 w-8 text-right hover:bg-red-600"
+				class=" duration-50 -ml-8 inline h-8 w-8 text-right hover:bg-red-600"
 			>
 				<Close />
 			</button>

@@ -1,5 +1,7 @@
 <script>
 	import Background from '$lib/components/background.svelte';
+	import { goto } from '$app/navigation';
+	
 	let src = [
 		'https://www.festivalpro.com/articles/1568.png',
 		'https://guitarglissando.com/wp-content/uploads/2022/11/elecback-e1667796666445.jpg',
@@ -13,6 +15,51 @@
 		}
 		num++;
 	}, 10000);
+	
+	// Variáveis para login
+	let usuario = '';
+	let senha = '';
+	let erro = '';
+	let carregando = false;
+	
+	// Função para fazer login
+	async function fazerLogin() {
+		erro = '';
+		carregando = true;
+		
+		try {
+			const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/usuarios/login`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ email: usuario, senha })
+			});
+			
+			const data = await response.json();
+			
+			if (!response.ok) {
+				erro = data.mensagem || 'Erro ao fazer login';
+				return;
+			}
+			
+			// Salvar token no localStorage
+			localStorage.setItem('token', data.token);
+			localStorage.setItem('usuario', JSON.stringify(data.usuario));
+			
+			// Redirecionar para a página principal
+			goto('/');
+		} catch (error) {
+			console.error('Erro ao fazer login:', error);
+			erro = 'Erro ao conectar com o servidor';
+		} finally {
+			carregando = false;
+		}
+	}
+	
+	function irParaCadastro() {
+		goto('/cadastro');
+	}
 </script>
 
 <Background />
@@ -45,7 +92,8 @@
 				type="text"
 				name="usuario"
 				id="usuario"
-				placeholder="Usuario"
+				placeholder="Email"
+				bind:value={usuario}
 				class="w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
 			/>
 
@@ -54,8 +102,14 @@
 				name="senha"
 				id="senha"
 				placeholder="Senha"
-				class=": w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
+				bind:value={senha}
+				class="w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
 			/>
+			
+			{#if erro}
+				<p class="text-sm text-red-500">{erro}</p>
+			{/if}
+			
 			<div class="mt-1 flex gap-3">
 				<a href="/Login"
 					><img
@@ -81,16 +135,21 @@
 			</div>
 			<div class="flex items-center justify-center gap-5">
 				<button
-					class="h-7 w-20 select-none rounded-full bg-green-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-green-500 active:border-green-500 active:bg-green-600"
-					>Login</button
+					class="h-7 w-20 select-none rounded-full bg-green-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-green-500 active:border-green-500 active:bg-green-600 {carregando ? 'opacity-50 cursor-not-allowed' : ''}"
+					on:click={fazerLogin}
+					disabled={carregando}
 				>
+					{carregando ? 'Aguarde...' : 'Login'}
+				</button>
 				<button
 					class="h-7 w-20 select-none rounded-full bg-blue-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-blue-500 active:bg-blue-600"
-					href="/cadastro">Cadastrar</button
+					on:click={irParaCadastro}
 				>
+					Cadastrar
+				</button>
 			</div>
 			<p class="text-sm text-gray-300">
-				não lembra a senha? <a href="/Login" class="text-shadow-2xs text-blue-600 hover:underline"
+				não lembra a senha? <a href="/recuperar-senha" class="text-shadow-2xs text-blue-600 hover:underline"
 					>Redefinir senha</a
 				>
 			</p>

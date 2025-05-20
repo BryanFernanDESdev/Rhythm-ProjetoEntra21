@@ -1,4 +1,15 @@
 import { Router } from "express";
-const router = Router()
+import { cadastrarUsuario, loginUsuario, obterPerfil } from "../controllers/usuarios.controller.js";
+import { autenticarToken } from "../middlewares/auth.middleware.js";
 
-export default router
+const router = Router();
+
+// Rotas públicas
+router.post("/", cadastrarUsuario);  // Rota para cadastro
+router.post("/cadastro", cadastrarUsuario);  // Mantendo a rota original também
+router.post("/login", loginUsuario);
+
+// Rotas protegidas
+router.get("/perfil", autenticarToken, obterPerfil);
+
+export default router;

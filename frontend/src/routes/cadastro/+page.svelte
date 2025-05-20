@@ -1,5 +1,7 @@
 <script>
 	import Background from '$lib/components/background.svelte';
+	import { goto } from '$app/navigation';
+	
 	let src = [
 		'https://www.festivalpro.com/articles/1568.png',
 		'https://guitarglissando.com/wp-content/uploads/2022/11/elecback-e1667796666445.jpg',
@@ -13,6 +15,64 @@
 		}
 		num++;
 	}, 10000);
+	
+	// Variáveis para cadastro
+	let email = '';
+	let senha = '';
+	let confirmarSenha = '';
+	let erro = '';
+	let carregando = false;
+	
+	// Função para cadastrar usuário
+	async function cadastrarUsuario() {
+		erro = '';
+		
+		// Validações básicas
+		if (!email || !senha || !confirmarSenha) {
+			erro = 'Todos os campos são obrigatórios';
+			return;
+		}
+		
+		if (senha !== confirmarSenha) {
+			erro = 'As senhas não coincidem';
+			return;
+		}
+		
+		carregando = true;
+		
+		try {
+			const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/usuarios/cadastro`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ email, senha })
+			});
+			
+			const data = await response.json();
+			
+			if (!response.ok) {
+				erro = data.mensagem || 'Erro ao cadastrar usuário';
+				return;
+			}
+			
+			// Salvar token no localStorage
+			localStorage.setItem('token', data.token);
+			localStorage.setItem('usuario', JSON.stringify(data.usuario));
+			
+			// Redirecionar para a página principal
+			goto('/');
+		} catch (error) {
+			console.error('Erro ao cadastrar:', error);
+			erro = 'Erro ao conectar com o servidor';
+		} finally {
+			carregando = false;
+		}
+	}
+	
+	function irParaLogin() {
+		goto('/login');
+	}
 </script>
 
 <Background />
@@ -46,6 +106,7 @@
 				name="Email"
 				id="email"
 				placeholder="Email"
+				bind:value={email}
 				class="w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
 			/>
 
@@ -54,15 +115,22 @@
 				name="senha"
 				id="senha"
 				placeholder="Senha"
-				class=": w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
+				bind:value={senha}
+				class="w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
 			/>
 			<input
 				type="password"
 				name="senha-repetir"
-				id="senha"
+				id="confirmarSenha"
 				placeholder="Repetir senha"
-				class=": w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
+				bind:value={confirmarSenha}
+				class="w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
 			/>
+			
+			{#if erro}
+				<p class="text-sm text-red-500">{erro}</p>
+			{/if}
+			
 			<div class="mt-1 flex gap-3">
 				<a href="/Login"
 					><img
@@ -88,13 +156,22 @@
 			</div>
 			<div class="flex items-center justify-center gap-5">
 				<button
-					class="h-7 w-20 select-none rounded-full bg-green-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-green-500 active:bg-green-600"
-					href="/cadastro">Cadastrar</button
+					class="h-7 w-20 select-none rounded-full bg-green-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-green-500 active:bg-green-600 {carregando ? 'opacity-50 cursor-not-allowed' : ''}"
+					on:click={cadastrarUsuario}
+					disabled={carregando}
 				>
+					{carregando ? 'Aguarde...' : 'Cadastrar'}
+				</button>
+				<button
+					class="h-7 w-20 select-none rounded-full bg-blue-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-blue-500 active:bg-blue-600"
+					on:click={irParaLogin}
+				>
+					Login
+				</button>
 			</div>
 			<p class="text-sm text-gray-300">
-				não lembra a senha? <a href="/Login" class="text-shadow-2xs text-blue-600 hover:underline"
-					>Redefinir senha</a
+				já tem uma conta? <a href="/login" class="text-shadow-2xs text-blue-600 hover:underline"
+					>Faça login</a
 				>
 			</p>
 		</div>
