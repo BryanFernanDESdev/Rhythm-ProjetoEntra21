@@ -58,7 +58,7 @@
 </section>
 
 <div
-	class="fixed inset-0 z-10 flex h-[100dvh] w-[100dvw] items-center justify-center bg-white/10 transition-opacity duration-300 {none
+	class="fixed inset-0 z-10 flex h-[100dvh] w-[100dvw] items-center justify-center bg-white/15 transition-opacity duration-300 {none
 		? 'pointer-events-none opacity-0'
 		: 'opacity-100'}"
 >

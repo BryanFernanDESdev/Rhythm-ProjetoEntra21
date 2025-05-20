@@ -15,7 +15,7 @@
 	} = $props();
 </script>
 
-<div class="h-13 mt-0.5 flex select-none items-center justify-between gap-1 bg-zinc-700 text-white">
+<div class="h-13 mt-0.5 flex select-none items-center justify-between gap-1 bg-zinc-700 text-white shadow-sm shadow-blue-600/20">
 	<div class="flex h-full w-10 items-center justify-center border-r-2 border-r-zinc-900 text-xl">
 		{num}
 	</div>
