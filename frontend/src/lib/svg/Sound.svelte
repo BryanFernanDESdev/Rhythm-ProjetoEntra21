@@ -1,11 +1,21 @@
 <script>
 	let bool = $state(false);
-    let range = $state(50)
+	let range = $state(50);
 </script>
 
 {#if bool}
-<button onclick={(bool = !bool)} aria-label="volume button" class="flex items-center justify-center">
-        <input type="range" class="-rotate-90 w-38 absolute -right-10 z-[-4] -top-10" min="0" max="100" bind:value={range} >
+	<button
+		onclick={(bool = !bool)}
+		aria-label="volume button"
+		class="flex items-center justify-center"
+	>
+		<input
+			type="range"
+			class="w-38 absolute -right-10 -top-10 z-[-4] -rotate-90"
+			min="0"
+			max="100"
+			bind:value={range}
+		/>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
@@ -20,7 +30,6 @@
 			/>
 		</svg>
 	</button>
-
 {:else}
 	<button onclick={(bool = !bool)} aria-label="volume button">
 		<svg

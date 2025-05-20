@@ -27,7 +27,6 @@
 	function checkTempo(time) {
 		return contador === time;
 	}
-
 </script>
 
 <section
@@ -59,16 +58,25 @@
 </section>
 
 <div
-	class="fixed z-10 flex h-screen w-screen items-center justify-center bg-white/10"
-	style="display: {none ? 'none' : ''}"
+	class="fixed inset-0 z-10 flex h-[100dvh] w-[100dvw] items-center justify-center bg-white/10 transition-opacity duration-300 {none
+		? 'pointer-events-none opacity-0'
+		: 'opacity-100'}"
 >
-	<div class="w-2xl z-10 h-[450px] bg-zinc-950 p-1 shadow shadow-gray-950">
-
-			<div class="flex items-center">
-				<h2 class="font-bold mx-auto capitalize text-white text-center hover:text-blue-500 duration-50">Metrônomo</h2>
-				<button onclick={() => (none = !none)} class=" hover:bg-red-600 duration-50 h-8 w-8 inline text-right -ml-8">
-					<Close />
-				</button>
-			</div>
+	<div
+		class="w-2xl z-10 h-[450px] transform bg-zinc-950 p-1 shadow shadow-gray-950 transition-all duration-300 {none
+			? '-translate-y-20 opacity-0'
+			: 'translate-y-0 opacity-100'}"
+	>
+		<div class="flex items-center">
+			<h2 class="mx-auto text-center font-bold capitalize text-white hover:text-blue-500">
+				Metrônomo
+			</h2>
+			<button
+				onclick={() => (none = !none)}
+				class="-ml-8 inline h-8 w-8 text-right hover:bg-red-600"
+			>
+				<Close />
+			</button>
+		</div>
 	</div>
 </div>
