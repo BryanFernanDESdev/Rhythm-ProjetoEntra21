@@ -39,13 +39,8 @@ Este projeto foi desenvolvido como parte do programa Entra21. O objetivo é apri
 
 ```txt
 📦 projeto-entra21
- ┣ 📁 .vscode
- ┣ 📂 assets
- ┃ ┣ 📂 css                   
- ┃ ┣ 📂 img                                       
- ┃ ┗ 📂 js
- ┣ 📂 node_modules            
- ┣ 📂 pages            
+ ┣ 📂 backend                 
+ ┣ 📂 frontend                   
  ┣ 📜 .env.example                   
  ┣ 📜 index.html              
  ┣ 📜 LICENSE                                     
