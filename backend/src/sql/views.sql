@@ -8,23 +8,41 @@ SELECT
 FROM usuarios u
 INNER JOIN playlists p ON u.id = p.usuario_id;
 
-CREATE VIEW view_musicas_playlists_completas AS
+CREATE OR REPLACE VIEW view_playlist_detalhada AS
 SELECT 
-    pm.playlist_id,
+    pl.id AS playlist_id,
+    pl.nome AS playlist_nome,
+    
     m.id AS musica_id,
     m.nome AS musica_nome,
+    m.numero_faixa,
     m.bpm,
     m.compasso,
-    m.duracao,
+    SEC_TO_TIME(m.duracao) AS duracao_formatada,
+    t.tom AS tom_musical,
+    
     alb.id AS album_id,
     alb.nome AS album_nome,
-    GROUP_CONCAT(DISTINCT art.nome SEPARATOR ', ') AS artistas
-FROM playlist_musica pm
+    alb.cover_url AS album_cover_url,
+    alb.lancado_em AS album_lancamento,
+    
+    GROUP_CONCAT(DISTINCT art.nome SEPARATOR ', ') AS artistas_nomes,
+    GROUP_CONCAT(DISTINCT art.foto_url SEPARATOR '|||') AS artistas_fotos_urls,
+    GROUP_CONCAT(DISTINCT art.id SEPARATOR ',') AS artistas_ids,
+    
+    pm.adicionado_em AS data_adicao_playlist
+FROM 
+    playlists pl
+INNER JOIN playlist_musica pm ON pl.id = pm.playlist_id
 INNER JOIN musicas m ON pm.musica_id = m.id
+INNER JOIN tons t ON m.tom_id = t.id
 INNER JOIN albuns alb ON m.album_id = alb.id
 INNER JOIN album_artistas aa ON alb.id = aa.album_id
 INNER JOIN artistas art ON aa.artista_id = art.id
-GROUP BY pm.playlist_id, m.id, alb.id;
+GROUP BY 
+    pl.id, m.id, alb.id, t.id, pm.adicionado_em
+ORDER BY 
+    pl.id, m.numero_faixa;
         
 CREATE VIEW view_albuns_artistas AS
     SELECT 

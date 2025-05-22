@@ -9,18 +9,16 @@
 	let tempo = $state('4/4');
 	let contador = $state(0);
 
-	function calculaVelocidade() {
-		return (60 / bpm) * 1000;
-	}
+	let velocidade = () => (60 / bpm) * 1000
 
 	let metronome = setInterval(() => {
 		contador++;
-		if (contador > 4) contador = 1;
-	}, calculaVelocidade());
+		if (contador > 4) contador = 1;	
+	}, velocidade())
 
 	function iniciaMetronomo() {
-		clearInterval(metronome());
-		metronome();
+		clearInterval(metronome);
+		metronome;
 		return (contador = 0);
 	}
 
@@ -52,6 +50,42 @@
 		</div>
 	</div>
 
+	<div
+		class="w-xs mx-auto flex h-20 flex-col items-center justify-center bg-gray-900 text-white shadow shadow-gray-950"
+	>
+		<div class="flex w-60 text-center">
+			<label for="bpm" class="block w-[50%]">BPM</label>
+			<label for="compasso" class="block w-[50%]">Compasso</label>
+		</div>
+		<div class="flex gap-2">
+			<input
+				type="number"
+				bind:value={bpm}
+				onchange={iniciaMetronomo(bpm)}
+				class="w-[50%] border border-gray-700 text-center"
+				min="1"
+				pattern="\d*"
+			/>
+			<select
+				name="compasso"
+				id="compasso"
+				bind:value={tempo}
+				class="w-[50%] border border-gray-700 bg-gray-900 text-center"
+			>
+				<option value="2/4">2/4</option>
+				<option value="3/4">3/4</option>
+				<option value="4/4">4/4</option>
+				<option value="5/4">5/4</option>
+				<option value="6/4">6/4</option>
+				<option value="3/8">3/8</option>
+				<option value="6/8">6/8</option>
+				<option value="9/8">9/8</option>
+				<option value="12/8">12/8</option>
+				<option value="5/8">5/8</option>
+				<option value="7/8">7/8</option>
+			</select>
+		</div>
+	</div>
 	<div>
 		<Player />
 	</div>

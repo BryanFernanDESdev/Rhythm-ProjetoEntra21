@@ -2,8 +2,19 @@
 	import Settings from '$lib/svg/Settings.svelte';
 	import Close from '$lib/svg/Close.svelte';
 	import PlaylistCard from './PlaylistCard.svelte';
+	import { onMount } from 'svelte';
 
+	let carregando = $state(false);
 	let none = $state(true);
+	let songs = $state([]);
+
+	onMount(async () => {
+		const response = await fetch('http://localhost:3000/views/Playlist/:id');
+		const data = {...response}
+		
+		songs = data.json();
+		carregando = true;
+	});
 </script>
 
 <div class="m-2 mb-0 mr-0 h-[98.5%] w-full rounded border border-blue-500/20 bg-zinc-950 p-4">
@@ -33,19 +44,26 @@
 				<li class="w-[13%] text-center">Opções</li>
 			</ul>
 		</header>
-		<PlaylistCard
-			num="1"
-			musica="Polly"
-			bpm="120.87"
-			tom="C#"
-			afinacao="Padrão"
-			duracao="1:12"
-			data="25/10/2006"
-			src="https://cdn-images.dzcdn.net/images/cover/f0282817b697279e56df13909962a54a/0x1900-000000-80-0-0.jpg"
-			album="Nevermind"
-			artista="Nirvana"
-			artistaUrl="https://i.scdn.co/image/a4e10b79a642e9891383448cbf37d7266a6883d6"
-		/>
+
+		{#if !carregando}
+			<div class="ml-5 mt-20 text-2xl text-white">Carregando ...</div>
+		{:else}
+			{#each songs as song}
+				<PlaylistCard
+					num={song.musica_id}
+					musica={song.musica_nome}
+					bpm={song.numero_faixa}
+					tom={song.tom_musical}
+					afinacao="Padrão"
+					duracao={song.duracao_formatada}
+					data={song.data_adicao_playlist}
+					src={song.album_cover_url}
+					album={song.album}
+					artista={song.artista_nomes}
+					artistaUrl={song.artistas_fotos_urls}
+				/>
+			{/each}
+		{/if}
 	</div>
 </div>
 
