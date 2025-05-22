@@ -7,15 +7,39 @@
 		afinacao,
 		duracao,
 		data,
+		data2,
 		dataAlbum,
 		src,
 		album,
 		artista,
 		artistaUrl
 	} = $props();
+
+	function formataData(data) {
+		const dataObj = new Date(data);
+		return dataObj.toLocaleDateString('pt-BR', {
+			year: 'numeric',
+			month: 'numeric',
+			day: 'numeric'
+		});
+	}
+
+	function formataMinuto(hora) {
+		const dataObj = new Date(hora);
+		return dataObj.toLocaleTimeString({});
+	}
+
+	function formatarTempoMMSS(tempoEmSegundos) {
+		const segundos = Math.floor(Number(tempoEmSegundos)) || 0;
+		const minutos = Math.floor(segundos / 60);
+		const segundosRestantes = segundos % 60;
+		return `${minutos}:${segundosRestantes.toString().padStart(2, '0')}`;
+	}
 </script>
 
-<div class="h-13 mt-0.5 flex select-none items-center justify-between gap-1 bg-zinc-700 text-white shadow-sm shadow-blue-600/20">
+<div
+	class="h-13 mt-0.5 flex select-none items-center justify-between gap-1 bg-zinc-700 text-white shadow-sm shadow-blue-600/20"
+>
 	<div class="flex h-full w-10 items-center justify-center border-r-2 border-r-zinc-900 text-xl">
 		{num}
 	</div>
@@ -26,7 +50,7 @@
 				<div class="-mb-1.5 mt-1.5 flex justify-between">
 					<img src={artistaUrl} alt="foto do artista {artista}" class="mr-2 size-4 rounded-full" />
 					{artista} - {album}
-					<div class="ml-7 text-sm text-white/60">{data}</div>
+					<div class="ml-10 text-right text-sm text-white/60">{formataData(data)}</div>
 				</div>
 			</div>
 			<div class="font text-xl">{musica}</div>
@@ -51,7 +75,7 @@
 		{duracao}
 	</div>
 	<div class="flex h-full w-[13%] items-center justify-center border-r-2 border-r-zinc-900 text-lg">
-		{data}
+		{formataData(data2)}
 	</div>
 	<div class="flex h-full w-[13%] items-center justify-center text-lg"></div>
 </div>

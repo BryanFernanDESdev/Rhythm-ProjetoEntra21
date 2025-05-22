@@ -87,14 +87,16 @@
 				>
 			</div>
 			<div class="flex items-center justify-center gap-5">
-				<button
-					class="h-7 w-20 select-none rounded-full bg-green-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-green-500 active:bg-green-600"
-					href="/cadastro">Cadastrar</button
-				>
+				<a href="/">
+					<button
+						class="h-7 w-20 select-none rounded-full bg-green-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-green-500 active:bg-green-600"
+						href="/cadastro">Cadastrar</button
+					>
+				</a>
 			</div>
 			<p class="text-sm text-gray-300">
-				não lembra a senha? <a href="/Login" class="text-shadow-2xs text-blue-600 hover:underline"
-					>Redefinir senha</a
+				já possui uma conta? <a href="/login" class="text-shadow-2xs text-blue-600 hover:underline"
+					>Login</a
 				>
 			</p>
 		</div>

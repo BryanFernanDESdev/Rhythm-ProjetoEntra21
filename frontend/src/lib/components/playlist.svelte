@@ -9,10 +9,10 @@
 	let songs = $state([]);
 
 	onMount(async () => {
-		const response = await fetch('http://localhost:3000/views/Playlist/:id');
-		const data = {...response}
+		const response = await fetch('http://localhost:3000/views/Playlist/1');
+		const data = response
 		
-		songs = data.json();
+		songs = await data.json();
 		carregando = true;
 	});
 </script>
@@ -48,18 +48,19 @@
 		{#if !carregando}
 			<div class="ml-5 mt-20 text-2xl text-white">Carregando ...</div>
 		{:else}
-			{#each songs as song}
+			{#each songs[1] as song}
 				<PlaylistCard
 					num={song.musica_id}
 					musica={song.musica_nome}
-					bpm={song.numero_faixa}
+					bpm={song.bpm}
 					tom={song.tom_musical}
 					afinacao="Padrão"
 					duracao={song.duracao_formatada}
-					data={song.data_adicao_playlist}
+					data={song.album_lancamento}
+					data2={song.data_adicao_playlist}
 					src={song.album_cover_url}
-					album={song.album}
-					artista={song.artista_nomes}
+					album={song.album_nome}
+					artista={song.artistas_nomes}
 					artistaUrl={song.artistas_fotos_urls}
 				/>
 			{/each}

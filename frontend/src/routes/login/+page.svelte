@@ -19,7 +19,7 @@
 
 <main class="flex h-screen w-screen items-center justify-center">
 	<section
-		class="w-4xl max-w-screen mx-4 flex h-[600px] max-h-screen rounded border border-gray-900 bg-gray-950 shadow shadow-blue-600"
+		class="w-4xl max-w-screen mx-4 flex h-[600px] max-h-screen rounded border border-gray-900 bg-gray-950 shado"
 	>
 		<div
 			rel="preload"
@@ -80,17 +80,21 @@
 				>
 			</div>
 			<div class="flex items-center justify-center gap-5">
-				<button
-					class="h-7 w-20 select-none rounded-full bg-green-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-green-500 active:border-green-500 active:bg-green-600"
-					>Login</button
-				>
-				<button
-					class="h-7 w-20 select-none rounded-full bg-blue-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-blue-500 active:bg-blue-600"
-					href="/cadastro">Cadastrar</button
-				>
+				<a href="/">
+					<button
+						class="h-7 w-20 select-none rounded-full bg-green-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-green-500 active:border-green-500 active:bg-green-600"
+						>Login</button
+					>
+				</a>
+				<a href="/cadastro">
+					<button
+						class="h-7 w-20 select-none rounded-full bg-blue-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-blue-500 active:bg-blue-600"
+						href="/cadastro">Cadastrar</button
+					>
+				</a>
 			</div>
 			<p class="text-sm text-gray-300">
-				não lembra a senha? <a href="/Login" class="text-shadow-2xs text-blue-600 hover:underline"
+				não lembra a senha? <a href="/login" class="text-shadow-2xs text-blue-600 hover:underline"
 					>Redefinir senha</a
 				>
 			</p>
