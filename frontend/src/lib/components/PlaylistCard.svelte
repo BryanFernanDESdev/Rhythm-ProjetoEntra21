@@ -45,15 +45,16 @@
 	</div>
 	<div class="flex h-full w-[40%] items-center border-r-2 border-r-zinc-900">
 		<img {src} alt="capa do album {album} por {artista}" class="mr-2 size-10" />
-		<div class="-my-0.5 flex flex-col justify-center">
-			<div class="flex justify-between text-sm">
-				<div class="-mb-1.5 mt-1.5 flex justify-between">
+		<div class="-my-0.5 flex flex-col justify-between w-full">
+			<div class="flex items-center justify-between">
+				<div class="flex justify-center items-center">
 					<img src={artistaUrl} alt="foto do artista {artista}" class="mr-2 size-4 rounded-full" />
-					{artista} - {album}
-					<div class="ml-10 text-right text-sm text-white/60">{formataData(data)}</div>
+					<h5 class="text-2xs font-bold">{artista} </h5>
+					<p class="text-xs">- {album}</p>
 				</div>
+				<div class="text-right text-sm text-white/60 justify-self-end mr-2">{formataData(data)}</div>
 			</div>
-			<div class="font text-xl">{musica}</div>
+			<div class="font-sans text-xl font-bold">{musica}</div>
 		</div>
 	</div>
 	<div
