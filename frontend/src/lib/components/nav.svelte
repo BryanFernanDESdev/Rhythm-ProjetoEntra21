@@ -32,12 +32,12 @@
 </header>
 
 <div
-	class="fixed inset-0 z-10 flex h-[100dvh] w-[100dvw] items-center justify-center bg-white/15 transition-opacity duration-300 {none
+	class="fixed inset-0 z-10 flex h-[100dvh] w-[100dvw] items-center justify-center bg-black/30 transition-opacity duration-300 {none
 		? 'pointer-events-none opacity-0'
 		: 'opacity-100'}"
 >
 	<div
-		class="w-2xl z-10 h-[450px] transform bg-zinc-950 p-1 shadow shadow-gray-950 transition-all duration-300 {none
+		class="w-2xl z-10 h-[450px] transform bg-zinc-950 p-1 shadow-xs shadow-blue-950 transition-all duration-300 {none
 			? '-translate-y-20 opacity-0'
 			: 'translate-y-0 opacity-100'}"
 	>

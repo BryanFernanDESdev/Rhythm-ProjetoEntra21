@@ -1,4 +1,11 @@
 <script>
+	import Close from '$lib/svg/Close.svelte';
+	import Chevron from '$lib/svg/Chevron.svelte';
+	import Elipsis from '$lib/svg/Elipsis.svelte';
+
+	let chevron = $state(false)
+	let close = $state(false)
+
 	let {
 		num,
 		musica,
@@ -38,21 +45,23 @@
 </script>
 
 <div
-	class="h-13 mt-0.5 flex select-none items-center justify-between gap-1 bg-zinc-700 text-white shadow-sm shadow-blue-600/20"
+	class="h-13 mt-0.5 flex select-none items-center justify-between gap-1 bg-zinc-700 text-white shadow-sm shadow-blue-600/20 {close?'hidden':''}"
 >
 	<div class="flex h-full w-10 items-center justify-center border-r-2 border-r-zinc-900 text-xl">
 		{num}
 	</div>
 	<div class="flex h-full w-[40%] items-center border-r-2 border-r-zinc-900">
 		<img {src} alt="capa do album {album} por {artista}" class="mr-2 size-10" />
-		<div class="-my-0.5 flex flex-col justify-between w-full">
+		<div class="-my-0.5 flex w-full flex-col justify-between">
 			<div class="flex items-center justify-between">
-				<div class="flex justify-center items-center">
+				<div class="flex items-center justify-center">
 					<img src={artistaUrl} alt="foto do artista {artista}" class="mr-2 size-4 rounded-full" />
-					<h5 class="text-2xs font-bold">{artista} </h5>
+					<h5 class="text-2xs font-bold">{artista}</h5>
 					<p class="text-xs">- {album}</p>
 				</div>
-				<div class="text-right text-sm text-white/60 justify-self-end mr-2">{formataData(data)}</div>
+				<div class="mr-2 justify-self-end text-right text-sm text-white/60">
+					{formataData(data)}
+				</div>
 			</div>
 			<div class="font-sans text-xl font-bold">{musica}</div>
 		</div>
@@ -78,5 +87,15 @@
 	<div class="flex h-full w-[13%] items-center justify-center border-r-2 border-r-zinc-900 text-lg">
 		{formataData(data2)}
 	</div>
-	<div class="flex h-full w-[13%] items-center justify-center text-lg"></div>
+	<div class="flex h-full w-[13%] items-center justify-evenly text-lg">
+		<button onclick={()=> chevron = !chevron} class={chevron?'rotate-0':'rotate-z-90'}>
+			<Chevron />
+		</button>
+		<button class="w-5" onclick={()=> close = !close}>
+			<Close />
+		</button>
+		<button> 
+			<Elipsis />
+		</button>
+	</div>
 </div>
