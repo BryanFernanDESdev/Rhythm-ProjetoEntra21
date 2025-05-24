@@ -15,6 +15,7 @@
 		songs = await data.json();
 		carregando = true;
 	});
+
 </script>
 
 <div class="m-2 mb-0 mr-0 h-[98.5%] w-full rounded border border-blue-500/20 bg-zinc-950 p-4">
@@ -83,7 +84,7 @@
 				Playlists
 			</h2>
 			<button
-				onclick={() => (none = !none)}
+				onclick={none = !none}
 				class="-ml-8 inline h-8 w-8 text-right hover:bg-red-600"
 			>
 				<Close />
