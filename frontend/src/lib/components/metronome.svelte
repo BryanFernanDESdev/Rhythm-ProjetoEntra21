@@ -5,22 +5,25 @@
 	import Close from '$lib/svg/Close.svelte';
 
 	let none = $state(true);
+
 	let bpm = $state(100);
 	let tempo = $state('4/4');
 	let contador = $state(0);
 
-	let velocidade = () => (60 / bpm) * 1000
+	let velocidade = $derived((60 / bpm) * 1000);
 
 	let metronome = setInterval(() => {
-		contador++;
-		if (contador > 4) contador = 1;	
-	}, velocidade())
+		contador = contador + 1;
+		if (contador > 4) contador = 1;
+	}, velocidade);
 
-	function iniciaMetronomo() {
+	let iniciaMetronomo = () => {
 		clearInterval(metronome);
-		metronome;
-		return (contador = 0);
-	}
+		metronome = setInterval(() => {
+			contador = contador + 1;
+			if (contador > 4) contador = 1;
+		}, velocidade);
+	};
 
 	function checkTempo(time) {
 		return contador === time;
@@ -50,6 +53,10 @@
 		</div>
 	</div>
 
+	<div>
+		<div class="roundend mx-auto mb-10 h-96 w-1 bg-blue-700" id="pointer"></div>
+	</div>
+
 	<div
 		class="w-xs mx-auto flex h-20 flex-col items-center justify-center bg-gray-900 text-white shadow shadow-gray-950"
 	>
@@ -61,7 +68,7 @@
 			<input
 				type="number"
 				bind:value={bpm}
-				onchange={iniciaMetronomo(bpm)}
+				onchange={iniciaMetronomo()}
 				class="w-[50%] border border-gray-700 text-center"
 				min="1"
 				pattern="\d*"
@@ -97,7 +104,7 @@
 		: 'opacity-100'}"
 >
 	<div
-		class="w-2xl z-10 h-[450px] transform bg-zinc-950 p-1 shadow-xs shadow-blue-950 transition-all duration-300 {none
+		class="w-2xl shadow-xs z-10 h-[450px] transform bg-zinc-950 p-1 shadow-blue-950 transition-all duration-300 {none
 			? '-translate-y-20 opacity-0'
 			: 'translate-y-0 opacity-100'}"
 	>
@@ -114,3 +121,22 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	#pointer {
+		animation: pointer infinite linear 600ms;
+		transform-origin: 50% 100%;
+	}
+
+	@keyframes pointer {
+		0% {
+			rotate: z 40deg;
+		}
+		50% {
+			rotate: z -40deg;
+		}
+		100% {
+			rotate: z 40deg;
+		}
+	}
+</style>
