@@ -13,23 +13,28 @@ SELECT
     pl.id AS playlist_id,
     pl.nome AS playlist_nome,
     
+    -- Dados da música
     m.id AS musica_id,
     m.nome AS musica_nome,
+    m.afinacao,
     m.numero_faixa,
     m.bpm,
     m.compasso,
-    SEC_TO_TIME(m.duracao) AS duracao_formatada,
+	m.duracao AS duracao_formatada,
     t.tom AS tom_musical,
     
+    -- Dados do álbum
     alb.id AS album_id,
     alb.nome AS album_nome,
     alb.cover_url AS album_cover_url,
     alb.lancado_em AS album_lancamento,
     
+    -- Dados dos artistas (agregados)
     GROUP_CONCAT(DISTINCT art.nome SEPARATOR ', ') AS artistas_nomes,
     GROUP_CONCAT(DISTINCT art.foto_url SEPARATOR '|||') AS artistas_fotos_urls,
     GROUP_CONCAT(DISTINCT art.id SEPARATOR ',') AS artistas_ids,
     
+    -- Data de adição
     pm.adicionado_em AS data_adicao_playlist
 FROM 
     playlists pl

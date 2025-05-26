@@ -39,16 +39,16 @@ INSERT INTO album_artistas (album_id, artista_id) VALUES
 (2, 2);
 
 INSERT INTO musicas (numero_faixa, nome, bpm, compasso, duracao, tom_id, album_id) VALUES 
-(1, 'Polly', 121, '4/4', 257, 11, 1),
-(2, 'Come As You Are', 120, '4/4', 338, 28, 1),
-(3, 'Breed', 158, '4/4', 304, 9, 1),
-(4, 'In Bloom', 157, '4/4', 415, 12, 1),
-(5, 'On a Plain', 133, '4/4', 316, 4, 1),
-(6, 'Drain You', 133, '4/4', 343, 16, 1),
-(7, 'Lithium', 123, '4/4', 417, 12, 1),
-(8, 'Something In The Way', 105, '4/4', 352, 30, 1),
-(9, 'Endless, Nameless', 132, '4/4', 642, 12, 1),
-(10, 'Back to the old House', 104, '4/4', 306, 4, 2);
+(1, 'Polly', 121, '4/4', 154200, 11, 1),
+(2, 'Come As You Are', 120, '4/4', 202800, 28, 1),
+(3, 'Breed', 158, '4/4', 182400, 9, 1),
+(4, 'In Bloom', 157, '4/4', 249000, 12, 1),
+(5, 'On a Plain', 133, '4/4', 189600, 4, 1),
+(6, 'Drain You', 133, '4/4', 205800, 16, 1),
+(7, 'Lithium', 123, '4/4', 250200, 12, 1),
+(8, 'Something In The Way', 105, '4/4', 211200, 30, 1),
+(9, 'Endless, Nameless', 132, '4/4', 385200, 12, 1),
+(10, 'Back to the old House', 104, '4/4', 183600, 4, 2);
 
 INSERT INTO usuarios (email, senha) VALUES 
 ('123@exemplo.com', SHA2('senha123', 256)),

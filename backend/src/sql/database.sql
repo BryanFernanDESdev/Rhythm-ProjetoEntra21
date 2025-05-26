@@ -9,6 +9,7 @@ CREATE TABLE `musicas` (
   `compasso` varchar(10) NOT NULL DEFAULT '4/4',
   `duracao` int NOT NULL,
   `cifra` longtext,
+  `afinacao` varchar(255),
   `tom_id` int NOT NULL,
   `album_id` int NOT NULL
 );
