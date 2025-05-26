@@ -44,7 +44,7 @@
 </script>
 
 <div
-	class="h-13 mt-0.5 flex items-center justify-between gap-1 bg-zinc-700 text-white shadow-sm shadow-blue-600/20 {close?'hidden':''}"
+	class="h-13 mt-0.5 flex items-center justify-between gap-1 bg-zinc-700 text-white shadow-xs shadow-blue-600/20 {close?'hidden':''}"
 >
 	<div class="flex h-full w-10 items-center justify-center border-r-2 border-r-zinc-900 text-xl">
 		{num}
@@ -90,11 +90,14 @@
 		<button onclick={()=> chevron = !chevron} class={chevron?'rotate-0':'rotate-z-90'}>
 			<Chevron />
 		</button>
-		<button class="w-5" onclick={()=> close = !close}>
+		<button class="size-6" onclick={()=> close = !close}>
 			<Close />
 		</button>
 		<button> 
 			<Elipsis />
 		</button>
 	</div>
+</div>
+<div class="{chevron?'h-[50vh] shadow-xs shadow-blue-600/20':'h-0'} w-full bg-zinc-700/90 transition-all duration-300 ">
+
 </div>

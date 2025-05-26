@@ -10,10 +10,9 @@
 
 	onMount(async () => {
 		const response = await fetch('http://localhost:3000/views/Playlist/1');
-		songs = await response.json()
+		songs = await response.json();
 		carregando = true;
 	});
-
 </script>
 
 <div class="m-2 mb-0 mr-0 h-[98.5%] w-full rounded border border-blue-500/20 bg-zinc-950 p-4">
@@ -28,10 +27,10 @@
 		</button>
 	</div>
 
-	<div class="w-full">
-		<header class="mt-5 h-4 bg-zinc-800">
+	<div class="max-h-[87vh] mt-5 w-full overflow-y-scroll">
+		<header class=" h-4 bg-zinc-800">
 			<ul
-				class="text-bold flex items-center justify-between gap-1 text-xs text-gray-400"
+				class="text-bold flex select-none items-center justify-between gap-1 text-xs text-gray-400"
 			>
 				<li class="w-10 border-r-2 border-r-zinc-900 text-center">N°</li>
 				<li class="w-[40%] border-r-2 border-r-zinc-900">Música</li>
@@ -46,8 +45,10 @@
 
 		{#if !carregando}
 			<section class="mx-auto mt-20">
-				<div class="size-7 animate-spin border-white/30 border-2 border-b-blue-700 mx-auto rounded-full"></div>
-				<p class="text-2xl text-white text-center">Carregando</p>
+				<div
+					class="mx-auto size-7 animate-spin rounded-full border-2 border-white/30 border-b-blue-700"
+				></div>
+				<p class="text-center text-2xl text-white">Carregando</p>
 			</section>
 		{:else}
 			{#each songs as song}
@@ -76,7 +77,7 @@
 		: 'opacity-100'}"
 >
 	<div
-		class="w-2xl z-10 h-[450px] transform bg-zinc-950 p-1 shadow-xs shadow-blue-950 transition-all duration-300 {none
+		class="w-2xl shadow-xs z-10 h-[450px] transform bg-zinc-950 p-1 shadow-blue-950 transition-all duration-300 {none
 			? '-translate-y-20 opacity-0'
 			: 'translate-y-0 opacity-100'}"
 	>
@@ -84,10 +85,7 @@
 			<h2 class="mx-auto text-center font-bold capitalize text-white hover:text-blue-500">
 				Playlists
 			</h2>
-			<button
-				onclick={none = !none}
-				class="-ml-8 inline h-8 w-8 text-right hover:bg-red-600"
-			>
+			<button onclick={(none = !none)} class="-ml-8 inline h-8 w-8 text-right hover:bg-red-600">
 				<Close />
 			</button>
 		</div>
