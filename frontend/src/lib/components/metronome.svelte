@@ -12,9 +12,11 @@
 
 	let velocidade = $derived((60 / bpm) * 1000);
 
+	let tempos = $derived(tempo.split('/')[1])
+
 	let metronome = setInterval(() => {
 		contador = contador + 1;
-		if (contador > 4) contador = 1;
+		if (contador > tempo.split('/')[0]) contador = 1;
 	}, velocidade);
 
 	let iniciaMetronomo = () => {
@@ -28,6 +30,16 @@
 	function checkTempo(time) {
 		return contador === time;
 	}
+
+	function calculaTempo(){
+		let num = parseInt(tempo.split('/')[0])
+		nums = []
+		for(let i=1;i<num+1;i++){
+			nums.push(i)
+		}
+	}
+
+	let nums = $derived([1,2,3,4])
 </script>
 
 <section
@@ -43,13 +55,12 @@
 			<Settings />
 		</button>
 	</div>
-	<div class="flex-5/6">
+	<div class="flex-1/6">
 		<h2 class="mt-4 text-center text-4xl font-thin text-white">{bpm}Bpm {tempo}</h2>
-		<div class="mt-3 flex items-center justify-center gap-2">
-			<Tempo num="1" focus={checkTempo(1)} tempo={false} />
-			<Tempo num="2" focus={checkTempo(2)} tempo={false} />
-			<Tempo num="3" focus={checkTempo(3)} tempo={false} />
-			<Tempo num="4" focus={checkTempo(4)} tempo={false} />
+		<div class="mt-3 flex items-center justify-center mx-auto gap-2 flex-wrap w-50">
+			{#each nums as num}
+			<Tempo {num} focus={checkTempo(num)} tempo={false} />
+			{/each}
 		</div>
 	</div>
 
@@ -77,19 +88,20 @@
 				name="compasso"
 				id="compasso"
 				bind:value={tempo}
+				onchange={calculaTempo}
 				class="w-[50%] border border-gray-700 bg-gray-900 text-center"
 			>
-				<option value="2/4">2/4</option>
-				<option value="3/4">3/4</option>
-				<option value="4/4">4/4</option>
-				<option value="5/4">5/4</option>
-				<option value="6/4">6/4</option>
-				<option value="3/8">3/8</option>
-				<option value="6/8">6/8</option>
-				<option value="9/8">9/8</option>
-				<option value="12/8">12/8</option>
-				<option value="5/8">5/8</option>
-				<option value="7/8">7/8</option>
+			<option value="12/8">12/8</option>
+			<option value="9/8">9/8</option>
+			<option value="7/8">7/8</option>
+			<option value="6/8">6/8</option>
+			<option value="5/8">5/8</option>
+			<option value="3/8">3/8</option>
+			<option value="6/4">6/4</option>
+			<option value="5/4">5/4</option>
+			<option value="4/4">4/4</option>
+			<option value="3/4">3/4</option>
+			<option value="2/4">2/4</option>
 			</select>
 		</div>
 	</div>
