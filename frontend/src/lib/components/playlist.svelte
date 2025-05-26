@@ -10,9 +10,7 @@
 
 	onMount(async () => {
 		const response = await fetch('http://localhost:3000/views/Playlist/1');
-		const data = response
-		
-		songs = await data.json();
+		songs = await response.json()
 		carregando = true;
 	});
 
@@ -21,7 +19,7 @@
 <div class="m-2 mb-0 mr-0 h-[98.5%] w-full rounded border border-blue-500/20 bg-zinc-950 p-4">
 	<div class="flex">
 		<h2
-			class="mx-auto select-none text-center text-xl text-white duration-100 hover:text-blue-400 hover:underline"
+			class="mx-auto text-center text-xl text-white duration-100 hover:text-blue-400 hover:underline"
 		>
 			Playlists
 		</h2>
@@ -33,7 +31,7 @@
 	<div class="w-full">
 		<header class="mt-5 h-4 bg-zinc-800">
 			<ul
-				class="text-bold flex select-none items-center justify-between gap-1 text-xs text-gray-400"
+				class="text-bold flex items-center justify-between gap-1 text-xs text-gray-400"
 			>
 				<li class="w-10 border-r-2 border-r-zinc-900 text-center">N°</li>
 				<li class="w-[40%] border-r-2 border-r-zinc-900">Música</li>
@@ -47,9 +45,12 @@
 		</header>
 
 		{#if !carregando}
-			<div class="ml-5 mt-20 text-2xl text-white">Carregando ...</div>
+			<section class="mx-auto mt-20">
+				<div class="size-7 animate-spin border-white/30 border-2 border-b-blue-700 mx-auto rounded-full"></div>
+				<p class="text-2xl text-white text-center">Carregando</p>
+			</section>
 		{:else}
-			{#each songs[1] as song}
+			{#each songs as song}
 				<PlaylistCard
 					num={song.musica_id}
 					musica={song.musica_nome}

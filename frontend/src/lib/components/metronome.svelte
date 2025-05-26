@@ -35,7 +35,7 @@
 >
 	<div class="flex">
 		<h3
-			class="mx-auto select-none text-center text-xl text-white duration-100 hover:text-blue-400 hover:underline"
+			class="mx-auto text-center text-xl text-white duration-100 hover:text-blue-400 hover:underline"
 		>
 			Metrônomo
 		</h3>

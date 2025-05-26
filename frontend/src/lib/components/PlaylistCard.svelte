@@ -31,21 +31,20 @@
 		});
 	}
 
-	function formataMinuto(hora) {
-		const dataObj = new Date(hora);
-		return dataObj.toLocaleTimeString({});
+	function formataDuracao(duracao){
+		const duracaoObj = new Date(duracao)
+		return duracaoObj.toLocaleTimeString('pt-br',{
+			hour12:false,
+			second:'2-digit',
+			minute:'numeric',
+			hours:false
+		})
 	}
 
-	function formatarTempoMMSS(tempoEmSegundos) {
-		const segundos = Math.floor(Number(tempoEmSegundos)) || 0;
-		const minutos = Math.floor(segundos / 60);
-		const segundosRestantes = segundos % 60;
-		return `${minutos}:${segundosRestantes.toString().padStart(2, '0')}`;
-	}
 </script>
 
 <div
-	class="h-13 mt-0.5 flex select-none items-center justify-between gap-1 bg-zinc-700 text-white shadow-sm shadow-blue-600/20 {close?'hidden':''}"
+	class="h-13 mt-0.5 flex items-center justify-between gap-1 bg-zinc-700 text-white shadow-sm shadow-blue-600/20 {close?'hidden':''}"
 >
 	<div class="flex h-full w-10 items-center justify-center border-r-2 border-r-zinc-900 text-xl">
 		{num}
@@ -82,7 +81,7 @@
 	<div
 		class="flex h-full w-[7.5%] items-center justify-center border-r-2 border-r-zinc-900 text-lg"
 	>
-		{duracao}
+		{formataDuracao(duracao)}
 	</div>
 	<div class="flex h-full w-[13%] items-center justify-center border-r-2 border-r-zinc-900 text-lg">
 		{formataData(data2)}
