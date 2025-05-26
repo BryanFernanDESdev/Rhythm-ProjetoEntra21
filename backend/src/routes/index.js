@@ -6,6 +6,7 @@ import viewsRoutes from './views.routes.js'
 import usersRoutes from './usuarios.routes.js'
 import musicasRoutes from './musicas.routes.js'
 import albumRoutes from './albuns.routes.js'
+import albumArtistaRoutes from './albumArtista.routes.js'
 
 const router = Router();
 
@@ -16,5 +17,6 @@ router.use('/views', viewsRoutes)
 router.use('/usuarios', usersRoutes)
 router.use('/musicas', musicasRoutes)
 router.use('/album', albumRoutes)
+router.use('/albumArtista', albumArtistaRoutes)
 
 export default router;
