@@ -28,6 +28,11 @@ export default function (sequelize, DataTypes) {
     cifra: {
       type: DataTypes.TEXT('long')
     },
+    afinacao:{
+      type:DataTypes.TEXT,
+      allowNull:true,
+      defaultValue:'Padrão'
+    },
     tom_id: DataTypes.INTEGER,
     album_id: DataTypes.INTEGER
   }, {
