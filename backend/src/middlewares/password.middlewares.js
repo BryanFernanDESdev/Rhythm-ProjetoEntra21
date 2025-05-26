@@ -23,14 +23,14 @@ export const checkPassword = async (req, res, next) => {
     if (!senha) res.status(400).send('senha inválida')
 
     try {
-        const response = await fetch(`http://localhost:3000/usuario/${id}`)
-
+        const response = await fetch(`http://localhost:3000/usuarios/${id}`)
         if (!response) throw new Error('erro ao verificar a senha')
+
         const data = await response.json()
 
-        const ehValido = bcrypt.compare(password, data.senha)
+        const ehValido = bcrypt.compare(senha, data.senha)
         if (ehValido) {
-            next();
+            res.status(200).send(true)
         }else{
             res.status(401).send('senha incorreta')
         }

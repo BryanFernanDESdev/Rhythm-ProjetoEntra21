@@ -1,4 +1,4 @@
-import express, {json} from 'express';
+import express from 'express';
 import cors from 'cors';
 import { initialize } from './config/db.js';
 import router from './routes/index.js'
@@ -8,7 +8,9 @@ initialize()
 const port = process.env.SERVER_PORT;
 const app = express();
 
-app.use(json())
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.json())
 app.use(cors());
 
 app.use(express.json())
