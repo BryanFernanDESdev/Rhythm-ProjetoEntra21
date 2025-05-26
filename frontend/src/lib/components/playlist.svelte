@@ -27,10 +27,10 @@
 		</button>
 	</div>
 
-	<div class="max-h-[87vh] mt-5 w-full overflow-y-scroll">
+	<div class="max-h-[87vh] mt-5 w-full overflow-y-scroll  min-h-[80vh]">
 		<header class=" h-4 bg-zinc-800">
 			<ul
-				class="text-bold flex select-none items-center justify-between gap-1 text-xs text-gray-400"
+				class="text-bold flex select-none items-center justify-between gap-1 text-xs text-gray-400 "
 			>
 				<li class="w-10 border-r-2 border-r-zinc-900 text-center">N°</li>
 				<li class="w-[40%] border-r-2 border-r-zinc-900">Música</li>

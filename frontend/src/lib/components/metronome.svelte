@@ -12,34 +12,35 @@
 
 	let velocidade = $derived((60 / bpm) * 1000);
 
-	let tempos = $derived(tempo.split('/')[1])
+	let tempos = $derived(tempo.split('/')[1]);
 
 	let metronome = setInterval(() => {
 		contador = contador + 1;
 		if (contador > tempo.split('/')[0]) contador = 1;
 	}, velocidade);
 
-	let iniciaMetronomo = () => {
+	function iniciaMetronomo() {
+		contador = 0;
 		clearInterval(metronome);
 		metronome = setInterval(() => {
 			contador = contador + 1;
-			if (contador > 4) contador = 1;
+			if (contador > tempo.split('/')[0]) contador = 1;
 		}, velocidade);
-	};
+	}
 
 	function checkTempo(time) {
 		return contador === time;
 	}
 
-	function calculaTempo(){
-		let num = parseInt(tempo.split('/')[0])
-		nums = []
-		for(let i=1;i<num+1;i++){
-			nums.push(i)
+	function calculaTempo() {
+		let num = parseInt(tempo.split('/')[0]);
+		nums = [];
+		for (let i = 1; i < num + 1; i++) {
+			nums.push(i);
 		}
 	}
 
-	let nums = $derived([1,2,3,4])
+	let nums = $derived([1, 2, 3, 4]);
 </script>
 
 <section
@@ -57,15 +58,19 @@
 	</div>
 	<div class="flex-1/6">
 		<h2 class="mt-4 text-center text-4xl font-thin text-white">{bpm}Bpm {tempo}</h2>
-		<div class="mt-3 flex items-center justify-center mx-auto gap-2 flex-wrap w-50">
+		<div class="w-50 mx-auto mt-3 flex flex-wrap items-center justify-center gap-2">
 			{#each nums as num}
-			<Tempo {num} focus={checkTempo(num)} tempo={false} />
+				<Tempo {num} focus={checkTempo(num)} tempo={false} />
 			{/each}
 		</div>
 	</div>
 
 	<div>
-		<div class="roundend mx-auto mb-10 h-96 w-1 bg-blue-700" id="pointer"></div>
+		<div
+			class="roundend mx-auto mb-10 h-96 w-1 bg-blue-700"
+			id="pointer"
+			style={'animation-duration:' + velocidade + 'ms'}
+		></div>
 	</div>
 
 	<div
@@ -79,7 +84,7 @@
 			<input
 				type="number"
 				bind:value={bpm}
-				onchange={iniciaMetronomo()}
+				onchange={iniciaMetronomo}
 				class="w-[50%] border border-gray-700 text-center"
 				min="1"
 				pattern="\d*"
@@ -91,17 +96,17 @@
 				onchange={calculaTempo}
 				class="w-[50%] border border-gray-700 bg-gray-900 text-center"
 			>
-			<option value="12/8">12/8</option>
-			<option value="9/8">9/8</option>
-			<option value="7/8">7/8</option>
-			<option value="6/8">6/8</option>
-			<option value="5/8">5/8</option>
-			<option value="3/8">3/8</option>
-			<option value="6/4">6/4</option>
-			<option value="5/4">5/4</option>
-			<option value="4/4">4/4</option>
-			<option value="3/4">3/4</option>
-			<option value="2/4">2/4</option>
+				<option value="12/8">12/8</option>
+				<option value="9/8">9/8</option>
+				<option value="7/8">7/8</option>
+				<option value="6/8">6/8</option>
+				<option value="5/8">5/8</option>
+				<option value="3/8">3/8</option>
+				<option value="6/4">6/4</option>
+				<option value="5/4">5/4</option>
+				<option value="4/4">4/4</option>
+				<option value="3/4">3/4</option>
+				<option value="2/4">2/4</option>
 			</select>
 		</div>
 	</div>
@@ -136,7 +141,7 @@
 
 <style>
 	#pointer {
-		animation: pointer infinite linear 600ms;
+		animation: pointer infinite linear;
 		transform-origin: 50% 100%;
 	}
 

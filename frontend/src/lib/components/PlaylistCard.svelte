@@ -98,6 +98,6 @@
 		</button>
 	</div>
 </div>
-<div class="{chevron?'h-[50vh] shadow-xs shadow-blue-600/20':'h-0'} w-full bg-zinc-700/90 transition-all duration-300 ">
+<div class="{chevron?'h-[70vh] shadow-xs shadow-blue-600/20 border-t border-t-black/20':'h-0'} w-full bg-zinc-700/90 transition-all duration-300">
 
 </div>
