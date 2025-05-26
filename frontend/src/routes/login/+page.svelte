@@ -13,6 +13,10 @@
 		}
 		num++;
 	}, 10000);
+
+	async function fazerLogin(){
+		
+	}
 </script>
 
 <Background />

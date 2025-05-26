@@ -6,13 +6,19 @@
 		'https://studiosol-a.akamaihd.net/tb/letras-blog/wp-content/uploads/2019/04/5a78f4c-shows_internacionais.jpg',
 		'https://tse4.mm.bing.net/th/id/OIP.9p6SQjpCbKT0REfObS1WQwHaEo?cb=iwc2&w=1600&h=1000&rs=1&pid=ImgDetMain'
 	];
-	let num = 0;
+	let num = $state(0);
+
+	let email = $state()
+	let senha = $state()
+	let repetirSenha = $state()
+
 	setInterval(() => {
 		if (num === src.length - 1) {
 			return (num = 0);
 		}
 		num++;
 	}, 10000);
+
 </script>
 
 <Background />
@@ -41,28 +47,32 @@
 			class="flex-2/4 flex h-full flex-col items-center justify-center gap-4 bg-neutral-950/80 text-white"
 		>
 			<p class="text-center capitalize text-gray-200">Criar uma conta</p>
-			<input
-				type="email"
-				name="Email"
-				id="email"
-				placeholder="Email"
-				class="w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
-			/>
-
-			<input
-				type="password"
-				name="senha"
-				id="senha"
-				placeholder="Senha"
-				class=": w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
-			/>
-			<input
-				type="password"
-				name="senha-repetir"
-				id="senha"
-				placeholder="Repetir senha"
-				class=": w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
-			/>
+			<form action="/" method="post">
+				<input
+					type="email"
+					name="Email"
+					id="email"
+					placeholder="Email"
+					bind:value={email}
+					class="w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
+				/>
+				<input
+					type="password"
+					name="senha"
+					id="senha"
+					placeholder="Senha"
+					bind:value={senha}
+					class=": w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
+				/>
+				<input
+					type="password"
+					name="senha-repetir"
+					id="senha"
+					placeholder="Repetir senha"
+					bind:value={repetirSenha}
+					class=": w-[60%] border-b bg-gray-900/20 px-4 py-2 outline-none placeholder:text-lg focus:bg-blue-950"
+				/>
+			</form>
 			<div class="mt-1 flex gap-3">
 				<a href="/Login"
 					><img
@@ -88,7 +98,7 @@
 			</div>
 			<div class="flex items-center justify-center gap-5">
 				<a href="/">
-					<button
+					<button type="submit"
 						class="h-7 w-20 select-none rounded-full bg-green-600 duration-200 hover:scale-110 hover:cursor-pointer hover:bg-green-500 active:bg-green-600"
 						href="/cadastro">Cadastrar</button
 					>
