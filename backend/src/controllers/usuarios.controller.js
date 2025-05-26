@@ -26,3 +26,13 @@ export const getUsersById = async (req, res) => {
     }
 }
 
+export const createUser = async (req, res) => {
+    try {
+        const {senha, email} = req.body
+        if(!senha,!email)res.status(400).send('cadastro incorreto')
+        const data = await models.Usuario.create({senha,email})
+        res.status(201).send(data)
+    } catch (error) {
+        res.status(500).send({ error })
+    }
+}
