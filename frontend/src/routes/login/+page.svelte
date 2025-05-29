@@ -23,12 +23,12 @@
 
 <main class="flex h-screen w-screen items-center justify-center">
 	<section
-		class="w-4xl max-w-screen mx-4 flex h-[600px] max-h-screen rounded border border-gray-900 bg-gray-950 shado"
+		class="w-4xl max-w-screen mx-4 flex h-[600px] max-h-screen rounded border border-gray-900 bg-gray-950"
 	>
-		<div
+		<section
 			rel="preload"
 			as="img"
-			class="flex-2/6 min-sm:block hidden h-full bg-gray-900 bg-cover bg-center"
+			class="flex-2/6 block h-full bg-gray-900 bg-cover bg-center"
 			style="background-image: url({src[num]});"
 		>
 			<div
@@ -40,7 +40,7 @@
 					Login
 				</h2>
 			</div>
-		</div>
+		</section>
 		<div
 			class="flex-2/4 flex h-full flex-col items-center justify-center gap-4 bg-neutral-950/80 text-white"
 		>

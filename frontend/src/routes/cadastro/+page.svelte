@@ -30,7 +30,7 @@
 		<div
 			rel="preload"
 			as="img"
-			class="flex-2/6 min-sm:block hidden h-full bg-gray-900 bg-cover bg-center"
+			class="flex-2/6 block h-full bg-gray-900 bg-cover bg-center"
 			style="background-image: url({src[num]});"
 		>
 			<div
