@@ -60,7 +60,7 @@
 		<h2 class="mt-4 text-center text-4xl font-thin text-white">{bpm}Bpm {tempo}</h2>
 		<div class="w-50 mx-auto mt-3 flex flex-wrap items-center justify-center gap-2">
 			{#each nums as num}
-				<Tempo {num} focus={checkTempo(num)} tempo={false} />
+				<Tempo {num} tempo={1} />
 			{/each}
 		</div>
 	</div>
@@ -69,7 +69,7 @@
 		<div
 			class="roundend mx-auto mb-10 h-96 w-1 bg-blue-700"
 			id="pointer"
-			style={'animation-duration:' + velocidade + 'ms'}
+			style={'animation-duration:' + velocidade/0.5 + 'ms'}
 		></div>
 	</div>
 
