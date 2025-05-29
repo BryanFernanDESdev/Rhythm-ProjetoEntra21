@@ -7,6 +7,8 @@ import usersRoutes from './usuarios.routes.js'
 import musicasRoutes from './musicas.routes.js'
 import albumRoutes from './albuns.routes.js'
 import albumArtistaRoutes from './albumArtista.routes.js'
+import spotifyUserRoutes from './spotifyUser.routes.js'
+import playlistMusicaRoutes from './playlistMusica.routes.js'
 
 const router = Router();
 
@@ -18,5 +20,7 @@ router.use('/usuarios', usersRoutes)
 router.use('/musicas', musicasRoutes)
 router.use('/album', albumRoutes)
 router.use('/albumArtista', albumArtistaRoutes)
+router.use('/spotifyUser',spotifyUserRoutes)
+router.use('/playlistMusica',playlistMusicaRoutes)
 
 export default router;
