@@ -13,33 +13,21 @@ Este projeto foi desenvolvido como parte do programa Entra21. O objetivo é apri
 
 ## 🛠️ Tecnologias Utilizadas
 
-<a href="https://developer.mozilla.org/docs/Web/HTML" target="_blank">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-</a>
-<a href="https://developer.mozilla.org/docs/Web/CSS" target="_blank">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-</a>
-<a href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-</a>
-<a href="https://svelte.dev" target="_blank">
-  <img src="https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white" alt="Svelte">
-</a>
-<a href="https://tailwindcss.com" target="_blank">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
-</a>
-<a href="https://expressjs.com" target="_blank">
-  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express">
-</a>
-<a href="https://www.mysql.com" target="_blank">
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
-</a>
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/docs/Web/JavaScript)
+[![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)](https://svelte.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com)
+[![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=sequelize&logoColor=white)](https://sequelize.org)
+[![Spotify Web API](https://img.shields.io/badge/Spotify_API-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://developer.spotify.com/documentation/web-api)
 
 ## 📂 Estrutura do Projeto
 
 ```txt
 📦 projeto-entra21
- ┣ 📂 backend                 
+ ┣ 📂 backend                                  
  ┣ 📂 frontend                   
  ┣ 📜 .env.example                   
  ┣ 📜 index.html              
@@ -49,29 +37,29 @@ Este projeto foi desenvolvido como parte do programa Entra21. O objetivo é apri
 
 ## 📌 Como Executar o Projeto
 
-1. Clone o repositório:
+1 - Clone o repositório:
 
-   ```bash
-   git clone https://github.com/Nicolas121221/Projeto-Entra21.git
-   ```
+```bash
+git clone https://github.com/Nicolas121221/Projeto-Entra21.git
+```
 
-2. Acesse a pasta do projeto:
+2 - Acesse a pasta do projeto:
 
-   ```bash
-   cd frontend
-   ```
+```bash
+cd frontend
+```
 
-3. Instale as dependências.
+3 - Instale as dependências.
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-4. Inicíe o Svelte.
+4 - Inicíe o Svelte.
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
 ## 📜 Licença
 
