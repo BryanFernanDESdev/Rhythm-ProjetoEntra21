@@ -2,6 +2,14 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// Verificar se as variáveis de ambiente necessárias estão definidas
+const requiredEnvVars = ['SPOTIFY_CLIENT_ID', 'SPOTIFY_CLIENT_SECRET', 'SPOTIFY_REDIRECT_URI'];
+requiredEnvVars.forEach(varName => {
+  if (!process.env[varName]) {
+    console.warn(`Atenção: Variável de ambiente ${varName} não está definida!`);
+  }
+});
+
 export const spotifyConfig = {
   clientId: process.env.SPOTIFY_CLIENT_ID,
   clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
